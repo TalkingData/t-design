@@ -1,9 +1,11 @@
 {
   "name": "t-design",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "t-design",
   "author": "TalkingData T-Design team",
-  "private": true,
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
