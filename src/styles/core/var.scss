@@ -1,0 +1,31 @@
+// default theme colors
+// cumstom
+// {
+//   loader: 'sass-loader',
+//   options: {
+//     // eslint-disable-next-line
+//     data: `
+//      $--color-primary: red;
+//     `,
+//   },
+// },
+
+/* Colors
+-------------------------- */
+$--color-white: #fff;
+$--color-black: #000;
+
+$--color-primary: #2d8cf0 !default;
+$--color-primary-light-1: mix($--color-white, $--color-primary, 10%);
+$--color-primary-light-2: mix($--color-white, $--color-primary, 20%);
+$--color-primary-light-3: mix($--color-white, $--color-primary, 30%);
+$--color-primary-light-4: mix($--color-white, $--color-primary, 40%);
+$--color-primary-light-5: mix($--color-white, $--color-primary, 50%);
+$--color-primary-light-6: mix($--color-white, $--color-primary, 60%);
+$--color-primary-light-7: mix($--color-white, $--color-primary, 70%);
+$--color-primary-light-8: mix($--color-white, $--color-primary, 80%);
+$--color-primary-light-9: mix($--color-white, $--color-primary, 90%);
+
+$--header-padding: 0 20px;
+$--main-padding: 20px;
+$--footer-padding: 0 20px;

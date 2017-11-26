@@ -1,7 +1,7 @@
 <template>
-  <header class="ivp-nav">
-    公共头{{title}}{{msg}}
-  </header>
+  <footer class="t-design-footer">
+    Copyright{{title}}{{msg}}
+  </footer>
 </template>
 <script>
 export default {
@@ -15,3 +15,6 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+@import 'index.scss';
+</style>
