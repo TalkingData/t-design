@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <tfooter></tfooter>
+    <!-- <tfooter></tfooter> -->
   </div>
 </template>
 
