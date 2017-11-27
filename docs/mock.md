@@ -6,6 +6,11 @@
 $ npm run mock
 ```
 
+## 访问接口
+直接访问 json-server http://localhost:3000/list
+
+代理访问 http://localhost:8080/api/list
+
 ## 配置
 json-server 的入口文件
 ```
