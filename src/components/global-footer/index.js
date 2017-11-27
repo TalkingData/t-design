@@ -1,3 +1,3 @@
-import GlobalHeader from './index.vue';
+import GlobalFooter from './index.vue';
 
-export default GlobalHeader;
+export default GlobalFooter;

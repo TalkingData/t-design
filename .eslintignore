@@ -4,3 +4,4 @@
 /*.js
 /test/unit/coverage/
 *.test.js
+/src/libs/
