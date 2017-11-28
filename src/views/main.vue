@@ -5,12 +5,12 @@
 <template>
   <div class="main" :class="{'main-hide-text': shrink}">
     <div class="sidebar-menu-con" :style="{width: shrink?'60px':'200px', overflow: shrink ? 'visible' : 'auto'}">
-      <global-menu 
-        :shrink="shrink" 
-        @on-change="handleSubmenuChange" 
-        :theme="menuTheme" 
-        :before-push="beforePush" 
-        :open-names="openedSubmenuArr" 
+      <global-menu
+        :shrink="shrink"
+        @on-change="handleSubmenuChange"
+        :theme="menuTheme"
+        :before-push="beforePush"
+        :open-names="openedSubmenuArr"
         :menu-list="menuList">
         <div slot="top" class="logo-con">
           <img v-show="!shrink" src="../assets/logo.jpg" key="max-logo" />

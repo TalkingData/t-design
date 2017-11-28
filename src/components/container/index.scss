@@ -1,0 +1,12 @@
+@import "../../styles/index.scss";
+
+@include b(container) {
+  box-sizing: border-box;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+
+  &.is-vertical {
+    flex-direction: column;
+  }
+}

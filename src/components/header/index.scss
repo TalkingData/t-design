@@ -1,0 +1,11 @@
+@import "../../styles/index.scss";
+// .header {
+//   box-sizing: border-box;
+//   padding: $--header-padding;
+// }
+
+@include b(header) {
+  box-sizing: border-box;
+  padding: $--header-padding;
+  color: $--color-primary;
+}

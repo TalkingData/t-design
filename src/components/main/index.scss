@@ -1,0 +1,15 @@
+@import "../../styles/index.scss";
+
+// .main {
+//   box-sizing: border-box;
+//   flex: 1;
+//   padding: $--main-padding;
+//   overflow: auto;
+// }
+
+@include b(main) {
+  box-sizing: border-box;
+  flex: 1;
+  padding: $--main-padding;
+  overflow: auto;
+}

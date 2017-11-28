@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Main from '@/views/Main';
+import Main from '@/views/main';
 
 Vue.use(Router);
 
@@ -14,16 +14,16 @@ export default new Router({
     {
       path: '/',
       icon: 'earth',
-      redirect: '/index',
-      name: 'hello',
-      title: 'hello',
+      redirect: '/layout',
+      name: 'layout',
+      title: '页面布局',
       component: Main,
       children: [{
         path: 'index',
         title: 'helloworld',
         name: 'HelloWorld',
         // eslint-disable-next-line
-        component: (resolve) => require(['../views/hello-world.vue'], resolve),
+        component: (resolve) => require(['../views/layout.vue'], resolve),
       }],
     }, {
       path: '/chart',

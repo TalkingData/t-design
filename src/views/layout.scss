@@ -1,0 +1,22 @@
+@import "../styles/index.scss";
+
+.item {
+  margin-bottom: 20px;
+}
+
+.t-design-main {
+  @include size(100%, 300px);
+  background-color: rgba(16, 142, 233, 1);
+}
+
+.t-design-footer {
+  background-color: #7dbcea;
+}
+
+.t-design-header {
+  background-color: #7dbcea;
+}
+
+.t-design-aside {
+  background-color: #3ba0e9;
+}

@@ -1,5 +1,5 @@
 <template>
-  <footer class="t-design-footer">
+  <footer class="t-design-g-footer">
     Copyright{{title}}{{msg}}
   </footer>
 </template>
@@ -17,5 +17,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import 'index.scss';
+@import './index.scss';
 </style>
