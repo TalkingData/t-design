@@ -14,7 +14,7 @@ export default new Router({
     {
       path: '/',
       icon: 'earth',
-      redirect: '/layout',
+      redirect: '/index',
       name: 'layout',
       title: '页面布局',
       component: Main,
