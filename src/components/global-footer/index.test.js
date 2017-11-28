@@ -14,6 +14,6 @@ describe('GlobalHeader test', () => {
   });
 
   it('should render correct contents', () => {
-    expect(cmp.vm.$el.textContent.trim()).toEqual('公共头testhaha');
+    expect(cmp.vm.$el.textContent.trim()).toEqual('Copyrighttesthaha');
   });
 });

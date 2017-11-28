@@ -12,10 +12,18 @@
     "start": "npm run dev",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "e2e": "node test/e2e/runner.js",
-    "test": "npm run unit && npm run e2e",
+    "test": "npm run unit",
     "css-lint": "./node_modules/.bin/stylelint --config .stylelintrc --syntax scss \"src/**/*.scss\"",
-    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
+    "es-lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
+    "lint": "npm run es-lint && npm run css-lint",
     "build": "node build/build.js"
+  },
+  "pre-commit": {
+    "run": [
+      "lint",
+      "test"
+    ],
+    "silent": false
   },
   "dependencies": {
     "apischema": "0.0.28",
