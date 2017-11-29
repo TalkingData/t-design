@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import { container, header, aside, main, footer } from '../components';
+import { container, header, aside, main, footer } from '../../components';
 
 export default {
   name: 'Layout',
