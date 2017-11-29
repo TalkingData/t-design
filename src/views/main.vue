@@ -34,7 +34,7 @@
         <router-view></router-view>
       </div>
     </div>
-    <tfooter></tfooter>
+    <tfooter :style="{paddingLeft: shrink?'60px':'200px'}"></tfooter>
   </div>
 </template>
 <script>
