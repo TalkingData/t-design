@@ -1,6 +1,6 @@
 <template>
   <footer class="t-design-g-footer">
-    Copyright {{title}} {{ $t('message.hello') }}
+    Copyright {{title}} {{ $t('global-footer.hello') }}
   </footer>
 </template>
 <script>

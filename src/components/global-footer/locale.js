@@ -1,11 +1,11 @@
 export default {
   'en-US': {
-    message: {
+    'global-footer': {
       hello: 'Tendcloud',
     },
   },
   'zh-CN': {
-    message: {
+    'global-footer': {
       hello: '腾云天下',
     },
   },
