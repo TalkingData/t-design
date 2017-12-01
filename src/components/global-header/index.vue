@@ -1,14 +1,14 @@
 <template>
-  <footer class="t-design-g-footer">
-    Copyright {{title}} {{ $t('global-footer.hello') }}
-  </footer>
+  <header class="t-design-g-header">
+    Header {{title}}
+  </header>
 </template>
 <script>
 import core from '../../mixins/core';
 import locale from './locale';
 
 export default {
-  name: 'GlobalFooter',
+  name: 'GlobalHeader',
   mixins: [core],
   props: {
     msg: String,
@@ -19,8 +19,9 @@ export default {
     };
   },
   created() {
-    this.$bus.$emit('testEvent', {
-      test: 1,
+    this.$bus.$on('testEvent', (evt) => {
+      // eslint-disable-next-line
+      console.log(evt);
     });
   },
   methods: {

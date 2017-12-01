@@ -34,20 +34,25 @@
         <router-view></router-view>
       </div>
     </div>
+    <theader :style="{paddingLeft: shrink?'60px':'200px'}"></theader>
     <tfooter :style="{paddingLeft: shrink?'60px':'200px'}"></tfooter>
   </div>
 </template>
 <script>
 import { Button, Icon } from 'iview';
 import globalMenu from '../components/global-menu/global-menu';
+import theader from '../components/global-header';
 import tfooter from '../components/global-footer';
 import Router from '../router';
+import core from '../mixins/core';
 
 export default {
+  mixins: [core],
   components: {
     iButton: Button,
     Icon,
     globalMenu,
+    theader,
     tfooter,
   },
   data() {
@@ -101,6 +106,10 @@ export default {
     this.menuList = Router.options.routes;
   },
   created() {
+    this.$bus.$on('testEvent', () => {
+      // eslint-disable-next-line
+      console.log('main event');
+    });
   },
 };
 

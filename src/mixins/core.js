@@ -1,5 +1,8 @@
+import bus from '../libs/bus';
+
 export default {
   created() {
+    this.$bus = bus;
     this.initLocale();
   },
   methods: {
@@ -32,6 +35,8 @@ export default {
       });
     },
     // 覆盖全局语言文件
-    getLocale() {},
+    getLocale() {
+      return {};
+    },
   },
 };
