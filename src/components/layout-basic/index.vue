@@ -1,7 +1,7 @@
 <style lang="scss">
-@import "./main.scss";
-
+@import "./index.scss";
 </style>
+
 <template>
   <div class="main" :class="{'main-hide-text': shrink}">
     <div class="sidebar-menu-con" :style="{width: shrink?'60px':'200px', overflow: shrink ? 'visible' : 'auto'}">
@@ -13,8 +13,8 @@
         :open-names="openedSubmenuArr"
         :menu-list="menuList">
         <div slot="top" class="logo-con">
-          <img v-show="!shrink" src="../assets/logo.jpg" key="max-logo" />
-          <img v-show="shrink" src="../assets/logo-min.jpg" key="min-logo" />
+          <img v-show="!shrink" :src="logo" key="max-logo" />
+          <img v-show="shrink" :src="logoMini" key="min-logo" />
         </div>
       </global-menu>
     </div>
@@ -31,20 +31,17 @@
     </div>
     <div class="single-page-con" :style="{left: shrink?'60px':'200px'}">
       <div class="single-page">
-        <router-view></router-view>
+        <slot name="view"></slot>
       </div>
     </div>
-    <theader :style="{paddingLeft: shrink?'60px':'200px'}"></theader>
     <tfooter :style="{paddingLeft: shrink?'60px':'200px'}"></tfooter>
   </div>
 </template>
 <script>
 import { Button, Icon } from 'iview';
-import globalMenu from '../components/global-menu/global-menu';
-import theader from '../components/global-header';
-import tfooter from '../components/global-footer';
-import Router from '../router';
-import core from '../mixins/core';
+import globalMenu from '../global-menu/global-menu';
+import tfooter from '../global-footer';
+import core from '../../mixins/core';
 
 export default {
   mixins: [core],
@@ -52,8 +49,21 @@ export default {
     iButton: Button,
     Icon,
     globalMenu,
-    theader,
     tfooter,
+  },
+  props: {
+    logo: {
+      type: String,
+      required: true,
+    },
+    logoMini: {
+      type: String,
+      required: true,
+    },
+    menus: {
+      type: Array,
+      required: true,
+    },
   },
   data() {
     return {
@@ -102,8 +112,7 @@ export default {
   watch: {
   },
   mounted() {
-    // 从router中取出路径
-    this.menuList = Router.options.routes;
+    this.menuList = this.menus;
   },
   created() {
     this.$bus.$on('testEvent', () => {
@@ -112,5 +121,4 @@ export default {
     });
   },
 };
-
 </script>
