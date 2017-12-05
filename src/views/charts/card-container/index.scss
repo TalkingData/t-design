@@ -1,0 +1,65 @@
+@import "../../../styles/index.scss";
+
+.clearfix::before,
+.clearfix::after {
+  display: table;
+  content: "";
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.card-container {
+  padding: 24px;
+  background: #fff;
+  &.border {
+    box-shadow: 0 1px 2px 0 rgba(28, 36, 56, .3);
+  }
+
+  &-title {
+    font-family: PingFang-SC-Regular;
+    font-size: 14px;
+    line-height: 14px;
+    color: #80848f;
+  }
+  &-content {
+    margin-top: 16px;
+    &-main {
+      display: inline-block;
+      font-family: PingFangSC-Regular;
+      font-size: 30px;
+      line-height: 30px;
+      color: #1c2438;
+    }
+    &-sub {
+      display: inline-block;
+      padding-left: 8px;
+      font-family: HelveticaNeue;
+      font-size: 14px;
+      line-height: 14px;
+      &.error {
+        color: #db425a;
+      }
+      &.success {
+        color: #19be6b;
+      }
+      &.info {
+        color: #db425a;
+      }
+    }
+  }
+}
