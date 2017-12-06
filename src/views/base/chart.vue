@@ -1,5 +1,5 @@
 <template>
   <div class="hello">
-    图2
+    图3
   </div>
 </template>
