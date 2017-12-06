@@ -2,7 +2,7 @@
   <div class="chart2">
     <i-row>
       <i-col span="6">
-        <cardcontaier 
+        <cardcontaier
         title="累计设备"
         content="32,625,318"
         sub-content="-12.15%"
@@ -33,7 +33,7 @@
 
 <script>
 import { Row, Col, Table } from 'iview';
-import tLine from 't-charts/src/packages/line';
+import tLine from 't-charts/lib/line';
 import cardcontaier from './card-container';
 import chartcontaier from './chart-container';
 import lineChartData from '../../libs/line';
