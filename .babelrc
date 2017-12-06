@@ -8,7 +8,9 @@
   "plugins": ["transform-runtime"],
   "env": {
     "test": {
-      "presets": ["env", "stage-2"],
+      "presets": [
+        ["env", { "targets": { "node": "current" }}]
+      ],
       "plugins": ["transform-es2015-modules-commonjs", "dynamic-import-node"]
     }
   }
