@@ -4,70 +4,86 @@
 <template>
   <div class="hello">
     <div class="main-container">
-      <div class="chart-container">
-        <Card style="width: 584px;height: 344px">
-          <p slot="title">饼图</p>
-          <ve-pie :data="pieData"
-                  :settings="pieSettings">
-          </ve-pie>
-        </Card>
-      </div>
-      <div class="chart-container">
-        <Card style="width: 584px;height: 344px">
-          <p slot="title">折线堆积面积图</p>
-          <ve-line :data="lineData"
-                   :settings="lineSettings">
-          </ve-line>
-        </Card>
-      </div>
-      <div class="chart-container">
-        <Card style="width: 584px;height: 344px">
-          <p slot="title">柱状图</p>
-          <ve-histogram :data="histogramData"
-                        :settings="histogramSettings">
-          </ve-histogram>
-        </Card>
-      </div>
-      <div class="chart-container">
-        <Card style="width: 584px;height: 344px">
-          <p slot="title">柱状堆积图</p>
-          <ve-histogram :data="hData"
-                        :settings="hSettings">
-          </ve-histogram>
-        </Card>
-      </div>
-      <div>
-        <Card style="width: 584px;height: 344px">
-          <p slot="title">环形图</p>
-          <ve-ring :data="ringData"
-                   :settings="ringSettings">
-          </ve-ring>
-        </Card>
-      </div>
-      <div>
-        <Card style="width: 584px;height: 344px">
-          <p slot="title">环形图</p>
-          <ve-ring :data="rData"
-                   :settings="rSettings">
-          </ve-ring>
-        </Card>
-      </div>
-      <div>
-        <Card style="width: 584px;height: 344px">
-          <p slot="title">雷达图</p>
-          <ve-radar :data="radarData"
-                    :settings="radarSettings">
-          </ve-radar>
-        </Card>
-      </div>
-      <div>
-        <Card style="width: 584px;height: 344px">
-          <p slot="title">条形图</p>
-          <ve-bar :data="barData"
-                  :settings="barSettings">
-          </ve-bar>
-        </Card>
-      </div>
+      <Row class="item-row" type="flex" justify="end">
+        <Col span="11">
+          <Card style="width: 584px;height: 344px">
+            <p slot="title">饼图</p>
+            <ve-pie :data="pieData"
+                    :settings="pieSettings"
+                    height="294px">
+            </ve-pie>
+          </Card>
+        </Col>
+        <Col span="11">
+          <Card style="width: 584px;height: 344px">
+            <p slot="title">折线堆积面积图</p>
+            <ve-line :data="lineData"
+                     :settings="lineSettings"
+                     height="294px">
+            </ve-line>
+          </Card>
+        </Col>
+      </Row>
+      <Row class="item-row" type="flex" justify="end">
+        <Col span="11">
+          <Card style="width: 584px;height: 344px">
+            <p slot="title">柱状图</p>
+            <ve-histogram :data="histogramData"
+                          :settings="histogramSettings"
+                          height="294px">
+            </ve-histogram>
+          </Card>
+        </Col>
+        <Col span="11">
+          <Card style="width: 584px;height: 344px">
+            <p slot="title">柱状堆积图</p>
+            <ve-histogram :data="hData"
+                          :settings="hSettings"
+                          height="294px">
+            </ve-histogram>
+          </Card>
+        </Col>
+      </Row>
+      <Row class="item-row" type="flex" justify="end">
+        <Col span="11">
+          <Card style="width: 584px;height: 344px">
+            <p slot="title">环形图</p>
+            <ve-ring :data="ringData"
+                     :settings="ringSettings"
+                     height="294px">
+            </ve-ring>
+          </Card>
+        </Col>
+        <Col span="11">
+          <Card style="width: 584px;height: 344px">
+            <p slot="title">环形图</p>
+            <ve-ring :data="rData"
+                     :settings="rSettings"
+                     height="294px">
+            </ve-ring>
+          </Card>
+        </Col>
+      </Row>
+      <Row class="item-row" type="flex" justify="end">
+        <Col span="11">
+          <Card style="width: 584px;height: 344px">
+            <p slot="title">雷达图</p>
+            <ve-radar :data="radarData"
+                      :settings="radarSettings"
+                      height="294px">
+            </ve-radar>
+          </Card>
+        </Col>
+        <Col span="11">
+          <Card style="width: 584px;height: 344px">
+            <p slot="title">条形图</p>
+            <ve-bar :data="barData"
+                    :settings="barSettings"
+                    height="294px">
+            </ve-bar>
+          </Card>
+        </Col>
+      </Row>
     </div>
   </div>
 </template>
@@ -89,6 +105,7 @@
       this.pieSettings = {
         dimension: '成本',
         metrics: '利润',
+        offsetY: 150,
       };
       this.lineData = {
         columns: ['日期', '成本', '利润', '占比', '其他'],
@@ -140,6 +157,7 @@
         ],
       }
       this.ringSettings = {
+        offsetY: 150,
         label: {
           normal: {
             show: false,
@@ -160,6 +178,7 @@
         ],
       }
       this.rSettings = {
+        offsetY: 150,
         label: {
           normal: {
             show: false,
@@ -191,7 +210,7 @@
           { '日期': '1-5', '余额': 3123, '年龄': 15 },
           { '日期': '1-6', '余额': 7123, '年龄': 20 },
         ],
-      }
+      };
       this.barSettings = {
         metrics: ['年龄'],
         dataOrder: {
@@ -199,14 +218,6 @@
           order: 'desc',
         },
       };
-    },
-    methods: {
-      resize() {
-        this.echarts.resize();
-      },
-    },
-    mounted() {
-      this.resize();
     },
   };
 </script>
