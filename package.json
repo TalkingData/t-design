@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "apischema": "0.0.28",
-    "iview": "^2.7.3",
+    "iview": "^2.7.4",
     "normalize.css": "^7.0.0",
     "t-charts": "^1.0.0",
     "vue": "^2.5.2",
