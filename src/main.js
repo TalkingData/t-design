@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
 import VueI18n from 'vue-i18n';
+import iView from 'iview';
 import 'iview/dist/styles/iview.css';
 import App from './app';
 import router from './router';
@@ -23,6 +24,7 @@ const i18n = new VueI18n({
   },
 });
 
+Vue.use(iView);
 Vue.config.productionTip = false;
 
 
