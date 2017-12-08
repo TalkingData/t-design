@@ -59,7 +59,7 @@
         text-align: center;
       }
       &:nth-child(2){
-        margin-right: 150px;
+        margin-right: 130px;
       }
       &:nth-child(3) b {
         display: inline-block;
