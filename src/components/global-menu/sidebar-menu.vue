@@ -25,14 +25,14 @@
   </i-menu>
 </template>
 <script>
-import { Menu, MenuItem, Submenu, Icon } from 'iview';
+import { Menu, MenuItem, SubMenu, Icon } from 'iview';
 
 export default {
   name: 'sidebarMenu',
   components: {
     iMenu: Menu,
     iMenuItem: MenuItem,
-    Submenu,
+    SubMenu,
     Icon,
   },
   props: {
