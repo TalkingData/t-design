@@ -4,9 +4,9 @@
 <template>
   <div class="hello">
     <div class="main-container">
-      <Row class="item-row" type="flex" justify="end">
-        <Col span="11">
-          <Card style="width: 584px;height: 344px">
+      <Row class="item-row" :gutter="24">
+        <Col span="12">
+          <Card>
             <p slot="title">饼图</p>
             <ve-pie :data="pieData"
                     :settings="pieSettings"
@@ -14,8 +14,8 @@
             </ve-pie>
           </Card>
         </Col>
-        <Col span="11">
-          <Card style="width: 584px;height: 344px">
+        <Col span="12">
+          <Card>
             <p slot="title">折线堆积面积图</p>
             <ve-line :data="lineData"
                      :settings="lineSettings"
@@ -24,9 +24,9 @@
           </Card>
         </Col>
       </Row>
-      <Row class="item-row" type="flex" justify="end">
-        <Col span="11">
-          <Card style="width: 584px;height: 344px">
+      <Row class="item-row" :gutter="24">
+        <Col span="12">
+          <Card>
             <p slot="title">柱状图</p>
             <ve-histogram :data="histogramData"
                           :settings="histogramSettings"
@@ -34,8 +34,8 @@
             </ve-histogram>
           </Card>
         </Col>
-        <Col span="11">
-          <Card style="width: 584px;height: 344px">
+        <Col span="12">
+          <Card>
             <p slot="title">柱状堆积图</p>
             <ve-histogram :data="hData"
                           :settings="hSettings"
@@ -44,9 +44,9 @@
           </Card>
         </Col>
       </Row>
-      <Row class="item-row" type="flex" justify="end">
-        <Col span="11">
-          <Card style="width: 584px;height: 344px">
+      <Row class="item-row" :gutter="24">
+        <Col span="12">
+          <Card>
             <p slot="title">环形图</p>
             <ve-ring :data="ringData"
                      :settings="ringSettings"
@@ -54,8 +54,8 @@
             </ve-ring>
           </Card>
         </Col>
-        <Col span="11">
-          <Card style="width: 584px;height: 344px">
+        <Col span="12">
+          <Card>
             <p slot="title">环形图</p>
             <ve-ring :data="rData"
                      :settings="rSettings"
@@ -64,9 +64,9 @@
           </Card>
         </Col>
       </Row>
-      <Row class="item-row" type="flex" justify="end">
-        <Col span="11">
-          <Card style="width: 584px;height: 344px">
+      <Row class="item-row" :gutter="24">
+        <Col span="12">
+          <Card>
             <p slot="title">雷达图</p>
             <ve-radar :data="radarData"
                       :settings="radarSettings"
@@ -74,8 +74,8 @@
             </ve-radar>
           </Card>
         </Col>
-        <Col span="11">
-          <Card style="width: 584px;height: 344px">
+        <Col span="12">
+          <Card>
             <p slot="title">条形图</p>
             <ve-bar :data="barData"
                     :settings="barSettings"
