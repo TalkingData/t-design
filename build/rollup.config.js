@@ -11,8 +11,9 @@ const commonjs = require('rollup-plugin-commonjs');
 
 let pkg = []
 const pkgTypeList = [
-  { type: 'cjs', min: false, suffix: '.common.js' },
-  { type: 'cjs', min: true, suffix: '.common.min.js' },
+  { type: 'es', min: false, suffix: '.esm.js' },
+  { type: 'cjs', min: false, suffix: '.cjs.js' },
+  { type: 'cjs', min: true, suffix: '.cjs.min.js' },
   { type: 'umd', min: false, suffix: '.js' },
   { type: 'umd', min: true, suffix: '.min.js' }
 ]
