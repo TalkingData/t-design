@@ -1,3 +1,26 @@
+$spacing-property-map: (
+  m:  margin,
+  mt: margin-top,
+  mr: margin-right,
+  ml: margin-left,
+  mb: margin-bottom,
+  p:  padding,
+  pt: padding-top,
+  pb: padding-bottom,
+  pl: padding-left,
+  pr: padding-right,
+);
+
+@for $size from 0 through 30 {
+  $val: $size;
+  .in-#{$val} { text-indent: 1px * $val; }
+
+  @each $keyword, $property in $spacing-property-map {
+    .#{$keyword}-#{$val} {
+      #{$property}: $val * 1px !important;
+    }
+  }
+}
 
 @import "../../styles/index.scss";
 

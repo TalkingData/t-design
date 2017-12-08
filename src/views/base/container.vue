@@ -1,29 +1,54 @@
 <template>
   <div class="container">
     <i-row>
-      <i-col span="6">
+      <i-col span="6" class="pr-8">
         <cardcontaier 
         title="title"
         content="content"
-        sub-content="subContent"
+        subContent="subContent"
         status="error"
         border
         type="normal"
-        ><!-- <div slot="content"></div> -->
+        >
         </cardcontaier>
-        <div>type:normal;含有title,content,sub-content</div>
+        <div class="mt-16">type:normal;含有title,content,sub-content</div>
       </i-col>
-      <i-col span="6">
+      <i-col span="6" class="pr-8">
         <cardcontaier 
-        title="累计设备"
+        title="title"
+        content="content"
+        subContent="subContent"
+        status="error"
+        :help="false"
+        border
+        type="normal"
+        >
+        </cardcontaier>
+        <div class="mt-16">type:normal;含有title,content,sub-content;不含help</div>
+      </i-col>
+      <i-col span="6" class="pr-8">
+        <cardcontaier 
+        title="日均下单量"
         content="32,625,318"
-        size="20"
         sub-content="-12.15%"
         color="#19be6b"
         border
         type="center"
-        ><!-- <div slot="content"></div> -->
+        >
+          <!-- <span slot="header">日均下单量</span> -->
         </cardcontaier>
+        <div class="mt-16">type:center;content,sub-content;无title</div>
+      </i-col>
+      <i-col span="6" class="pr-8">
+        <cardcontaier 
+        content="32,625,318"
+        size="20"
+        sub-content="日均下单量"
+        color="#80848F"
+        border
+        type="left"
+        ></cardcontaier>
+        <div class="mt-16">type:left;content,sub-content;无title</div>
       </i-col>
     </i-row>
     <i-row class="chart-show-area">
