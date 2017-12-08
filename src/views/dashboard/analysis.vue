@@ -141,63 +141,32 @@
         </Card>
         </Col>
       </Row>
-      <Row class="item-row" type="flex" justify="end">
-        <Col span="11">
-        <Card style="width: 584px;height: 344px">
-          <p slot="title">地图</p>
+      <Card>
+        <p slot="title">城市排名TOP10</p>
+        <Row class="item-row" type="flex" justify="end">
+          <Col span="12">
           <ve-map :data="mapData"
-                  :settings="mapSettings"
-                  :visualMap="visualMap"
-                  height="294px">
+                 :settings="mapSettings"
+                 :visualMap="visualMap"
+                 height="294px">
           </ve-map>
-        </Card>
-        </Col>
-        <Col span="11">
-        <Card style="width: 584px;height: 344px">
-          <p slot="title">城市TOP10</p>
-          <div class="area-rank-list">
-            <div class="list-container">
-              <ul>
-                <li>1</li>
-                <li>广东省</li>
-                <li><label>23.45%</label><b><i style="width:90%"></i></b></li>
-              </ul>
-              <ul>
-                <li>2</li>
-                <li>广东省</li>
-                <li><label>23.45%</label><b><i style="width:80%"></i></b></li>
-              </ul>
-              <ul>
-                <li>3</li>
-                <li>广东省</li>
-                <li><label>23.45%</label><b><i style="width:70%"></i></b></li>
-              </ul>
-              <ul>
-                <li>4</li>
-                <li>广东省</li>
-                <li><label>23.45%</label><b><i style="width:60%"></i></b></li>
-              </ul>
-              <ul>
-                <li>5</li>
-                <li>广东省</li>
-                <li><label>23.45%</label><b><i style="width:50%"></i></b></li>
-              </ul>
-              <ul>
-                <li>6</li>
-                <li>广东省</li>
-                <li><label>23.45%</label><b><i style="width:40%"></i></b></li>
-              </ul>
-            </div>
-          </div>
-        </Card>
-        </Col>
-      </Row>
+          </Col>
+          <Col span="12">
+            <top-10></top-10>
+          </Col>
+        </Row>
+      </Card>
     </div>
   </div>
 </template>
 
 <script>
+  import top10 from './top10';
+
   export default {
+    components: {
+      top10,
+    },
     created() {
       this.pieData = {
         columns: ['日期', '成本', '利润'],
