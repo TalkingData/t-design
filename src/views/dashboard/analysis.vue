@@ -1,171 +1,90 @@
 <style lang="scss">
   .item-row{
-    margin-bottom: 20px;
-  }
-  .list-container {
-    height: 300px;
-    overflow: auto;
     margin-top: 20px;
-  }
-  .area-rank-list ul{
-    display: flex;
-    padding: 0 24px;
-    li{
-      height: 40px;
-      display: inline;
-      line-height: 20px;
-      margin-right: 20px;
-      label{
-        margin-right: 20px;
-      }
-      &:nth-child(1){
-        background: #E9EAEC ;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        text-align: center;
-      }
-      &:nth-child(2){
-        margin-right: 150px;
-      }
-      &:nth-child(3) b {
-        display: inline-block;
-        position: relative;
-        overflow: hidden;
-        width: 180px;
-        background: #F2F2F3;
-        height: 8px;
-        i{
-          position: absolute;
-          left: 0;
-          top: 0;
-          height: 8px;
-          background: #2D8CF0;
-        }
-      }
-    }
-    &:nth-child(1) li:nth-child(1){
-      background: #FF8454;
-      color:#fff;
-    }
-    &:nth-child(2) li:nth-child(1){
-      background: #FCC45F;
-      color:#fff;
-    }
-    &:nth-child(3) li:nth-child(1){
-      background: #2DE2C5;
-      color:#fff;
-    }
   }
 </style>
 <template>
   <div class="hello">
     <div class="main-container">
-      <Row class="item-row" type="flex" justify="end">
-        <Col span="11">
-        <Card style="width: 584px;height: 344px">
-          <p slot="title">饼图</p>
-          <ve-pie :data="pieData"
-                  :settings="pieSettings"
-                  height="294px">
-          </ve-pie>
-        </Card>
-        </Col>
-        <Col span="11">
-        <Card style="width: 584px;height: 344px">
-          <p slot="title">折线堆积面积图</p>
+      <Row class="item-row" type="flex" justify="space-between">
+        <Card style="width:1115px;height: 380px">
+          <p slot="title">折线图</p>
           <ve-line :data="lineData"
-                   :settings="lineSettings"
-                   height="294px">
+                   height="350px">
           </ve-line>
         </Card>
+      </Row>
+      <Row class="item-row" type="flex" justify="space-between">
+        <Col span="12">
+          <Card style="width: 550px;height: 344px">
+            <p slot="title">柱状图</p>
+            <ve-histogram :data="histogramData"
+                          :settings="histogramSettings"
+                          width='450px'
+                          height="294px">
+            </ve-histogram>
+          </Card>
+        </Col>
+        <Col span="12">
+          <Card style="width: 550px;height: 344px">
+            <p slot="title">柱状堆积图</p>
+            <ve-histogram :data="hData"
+                          :settings="hSettings"
+                          width='450px'
+                          height="294px">
+            </ve-histogram>
+          </Card>
         </Col>
       </Row>
-      <Row class="item-row" type="flex" justify="end">
-        <Col span="11">
-        <Card style="width: 584px;height: 344px">
-          <p slot="title">柱状图</p>
-          <ve-histogram :data="histogramData"
-                        :settings="histogramSettings"
-                        height="294px">
-          </ve-histogram>
-        </Card>
-        </Col>
-        <Col span="11">
-        <Card style="width: 584px;height: 344px">
-          <p slot="title">柱状堆积图</p>
-          <ve-histogram :data="hData"
-                        :settings="hSettings"
-                        height="294px">
-          </ve-histogram>
-        </Card>
-        </Col>
-      </Row>
-      <Row class="item-row" type="flex" justify="end">
-        <Col span="11">
-        <Card style="width: 584px;height: 344px">
+      <Row class="item-row" type="flex" justify="space-between">
+        <Col span="12">
+        <Card style="width: 550px;height: 344px">
           <p slot="title">环形图</p>
           <ve-ring :data="ringData"
                    :settings="ringSettings"
+                   width='500px'
                    height="294px">
           </ve-ring>
         </Card>
         </Col>
-        <Col span="11">
-        <Card style="width: 584px;height: 344px">
+        <Col span="12">
+        <Card style="width: 550px;height: 344px">
           <p slot="title">环形图</p>
           <ve-ring :data="rData"
                    :settings="rSettings"
+                   width='500px'
                    height="294px">
           </ve-ring>
         </Card>
         </Col>
       </Row>
-      <Row class="item-row" type="flex" justify="end">
-        <Col span="11">
-        <Card style="width: 584px;height: 344px">
-          <p slot="title">雷达图</p>
-          <ve-radar :data="radarData"
-                    :settings="radarSettings"
-                    height="294px">
-          </ve-radar>
+      <Row class="item-row" type="flex" justify="space-between">
+        <Card style="width:1115px;height: 380px">
+          <p slot="title">城市排名TOP10</p>
+          <Row type="flex" justify="center">
+            <Col span="12">
+            <ve-map :data="mapData"
+                   :settings="mapSettings"
+                   :visualMap="visualMap"
+                   height="294px">
+            </ve-map>
+            </Col>
+            <Col span="12">
+              <top-rank></top-rank>
+            </Col>
+          </Row>
         </Card>
-        </Col>
-        <Col span="11">
-        <Card style="width: 584px;height: 344px">
-          <p slot="title">条形图</p>
-          <ve-bar :data="barData"
-                  :settings="barSettings"
-                  height="294px">
-          </ve-bar>
-        </Card>
-        </Col>
       </Row>
-      <Card>
-        <p slot="title">城市排名TOP10</p>
-        <Row class="item-row" type="flex" justify="end">
-          <Col span="12">
-          <ve-map :data="mapData"
-                 :settings="mapSettings"
-                 :visualMap="visualMap"
-                 height="294px">
-          </ve-map>
-          </Col>
-          <Col span="12">
-            <top-10></top-10>
-          </Col>
-        </Row>
-      </Card>
     </div>
   </div>
 </template>
 
 <script>
-  import top10 from './top10';
+  import topRank from './topRank';
 
   export default {
     components: {
-      top10,
+      topRank,
     },
     created() {
       this.pieData = {
