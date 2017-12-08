@@ -16,9 +16,9 @@
     "css-lint": "./node_modules/.bin/stylelint --config .stylelintrc --syntax scss \"src/**/*.scss\"",
     "es-lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
     "lint": "npm run es-lint && npm run css-lint",
-    "build": "node build/build.js",
+    "build": "node build/rollup.config.js && node build/build.js",
     "docs": "./node_modules/docsify-cli/bin/docsify serve ./docs",
-    "deploy": "rm -rf dist && rm -rf site && mkdir -p ./site/preview && npm run build && cp -R ./dist/* ./site/preview/ && cp -R ./docs/* ./site/ && ./node_modules/.bin/gh-pages -d site"
+    "deploy": "rm -rf components && rm -rf dist && rm -rf site && mkdir -p ./site/preview && npm run build && cp -R ./dist/* ./site/preview/ && cp -R ./docs/* ./site/ && ./node_modules/.bin/gh-pages -d site"
   },
   "pre-commit": {
     "run": [
