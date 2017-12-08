@@ -5,8 +5,12 @@ import VueI18n from 'vue-i18n';
 import 'iview/dist/styles/iview.css';
 import App from './app';
 import router from './router';
+import iView from 'iview';
+import Tcharts from 't-charts';
 
 Vue.use(VueI18n);
+Vue.use(iView);
+Vue.use(Tcharts);
 const i18n = new VueI18n({
   locale: 'zh-CN',
   messages: {
