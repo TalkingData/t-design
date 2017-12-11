@@ -33,10 +33,16 @@
       iButton: Button,
     },
     props: {
+      type: {
+        type: String,
+        default: '',
+      },
+      // 名称
       title: {
         type: String,
         default: '',
       },
+      // 内容
       content: {
         type: String,
         default: '',
