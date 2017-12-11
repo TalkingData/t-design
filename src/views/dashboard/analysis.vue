@@ -6,70 +6,78 @@
 <template>
   <div class="hello">
     <div class="main-container">
-      <Row class="item-row" type="flex" justify="space-between">
-        <Card style="width:1115px;height: 380px">
-          <p slot="title">折线图</p>
+      <Row class="item-row">
+        <Card>
+          <p slot="title" class="card-title">折线图</p>
           <ve-line :data="lineData"
-                   height="350px">
+                   style="width:100%;height:100%;">
           </ve-line>
         </Card>
       </Row>
-      <Row class="item-row" type="flex" justify="space-between">
-        <Col span="12">
-          <Card style="width: 550px;height: 344px">
-            <p slot="title">柱状图</p>
-            <ve-histogram :data="histogramData"
-                          :settings="histogramSettings"
-                          width='450px'
-                          height="294px">
-            </ve-histogram>
+      <Row class="item-row" :gutter="10">
+        <Col :md="24" :lg="12" :style="{marginBottom: '10px'}">
+          <Card>
+            <p slot="title" class="card-title">柱状图</p>
+            <div style='height:300px'>
+              <ve-histogram :data="histogramData"
+                            :settings="histogramSettings"
+                            width='100%'
+                            height="100%">
+              </ve-histogram>
+            </div>
           </Card>
         </Col>
-        <Col span="12">
-          <Card style="width: 550px;height: 344px">
-            <p slot="title">柱状堆积图</p>
-            <ve-histogram :data="hData"
-                          :settings="hSettings"
-                          width='450px'
-                          height="294px">
-            </ve-histogram>
+        <Col :md="24" :lg="12" :style="{marginBottom: '10px'}">
+          <Card>
+            <p slot="title" class="card-title">柱状堆积图</p>
+            <div style='height:300px'>
+              <ve-histogram :data="hData"
+                            :settings="hSettings"
+                            width='100%'
+                            height="100%">
+              </ve-histogram>
+            </div>
           </Card>
         </Col>
       </Row>
-      <Row class="item-row" type="flex" justify="space-between">
-        <Col span="12">
-        <Card style="width: 550px;height: 344px">
-          <p slot="title">环形图</p>
-          <ve-ring :data="ringData"
-                   :settings="ringSettings"
-                   width='500px'
-                   height="294px">
-          </ve-ring>
-        </Card>
+      <Row class="item-row" :gutter="10">
+        <Col :md="24" :lg="12" :style="{marginBottom: '10px'}">
+          <Card>
+            <p slot="title" class="card-title">环形图</p>
+            <div style='height:300px'>
+              <ve-ring :data="ringData"
+                       :settings="ringSettings"
+                       width='100%'
+                       height="100%">
+              </ve-ring>
+            </div>
+          </Card>
         </Col>
-        <Col span="12">
-        <Card style="width: 550px;height: 344px">
-          <p slot="title">环形图</p>
-          <ve-ring :data="rData"
-                   :settings="rSettings"
-                   width='500px'
-                   height="294px">
-          </ve-ring>
-        </Card>
+        <Col :md="24" :lg="12" :style="{marginBottom: '10px'}">
+          <Card>
+            <p slot="title" class="card-title">环形图</p>
+            <div style='height:300px'>
+              <ve-ring :data="rData"
+                       :settings="rSettings"
+                       width='100%'
+                       height="100%">
+              </ve-ring>
+            </div>
+          </Card>
         </Col>
       </Row>
-      <Row class="item-row" type="flex" justify="space-between">
-        <Card style="width:1115px;height: 380px">
+      <Row class="item-row">
+        <Card>
           <p slot="title">城市排名TOP10</p>
           <Row type="flex" justify="center">
-            <Col span="12">
+            <Col :md="24" :lg="12" :style="{marginBottom: '10px'}">
             <ve-map :data="mapData"
                    :settings="mapSettings"
                    :visualMap="visualMap"
-                   height="294px">
+                   height="300px">
             </ve-map>
             </Col>
-            <Col span="12">
+            <Col :md="24" :lg="12" :style="{marginBottom: '10px'}">
               <top-rank></top-rank>
             </Col>
           </Row>
@@ -182,37 +190,6 @@
           },
         },
         radius: [40, 90],
-      };
-      this.radarData = {
-        columns: ['城市', '房价', '收入', '人口比例'],
-        rows: [
-          { '房价': 10000, '收入': 4000, '人口比例': 0.4, '城市': '北京' },
-          { '房价': 20000, '收入': 6000, '人口比例': 0.6, '城市': '上海' },
-          { '房价': 30000, '收入': 8000, '人口比例': 0.2, '城市': '广州' },
-        ],
-      }
-      this.radarSettings = {
-        dataType: {
-          '人口比例': 'percent',
-        },
-      };
-      this.barData = {
-        columns: ['日期', '余额', '年龄'],
-        rows: [
-          { '日期': '1-1', '余额': 123, '年龄': 3 },
-          { '日期': '1-2', '余额': 1223, '年龄': 6 },
-          { '日期': '1-3', '余额': 2123, '年龄': 90 },
-          { '日期': '1-4', '余额': 4123, '年龄': 12 },
-          { '日期': '1-5', '余额': 3123, '年龄': 15 },
-          { '日期': '1-6', '余额': 7123, '年龄': 20 },
-        ],
-      };
-      this.barSettings = {
-        metrics: ['年龄'],
-        dataOrder: {
-          label: '年龄',
-          order: 'desc',
-        },
       };
       this.mapData = {
         columns: ['位置', 'GDP'],
