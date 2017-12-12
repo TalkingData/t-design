@@ -1,0 +1,2 @@
+webpackJsonp([7],{Bsz2:function(e,n,l){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var t=function(){var e=this,n=e.$createElement;return(e._self._c||n)("div",{staticClass:"hello"},[e._v("\n  标准表单\n")])},s=[],r={render:t,staticRenderFns:s},u=r,a=l("VU/8"),c=a(null,u,!1,null,null,null);n.default=c.exports}});
+//# sourceMappingURL=7.05e66f5dc2a1e26605dd.js.map
