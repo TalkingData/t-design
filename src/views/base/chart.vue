@@ -6,6 +6,28 @@
     <div class="main-container">
       <Row class="item-row" :gutter="24">
         <Col span="12">
+        <Card>
+          <p slot="title">30日趋势</p>
+          <ve-line  :data="lData"
+                    :settings="lSettings"
+
+                    :legend-visible="false"
+                    height="294px">
+          </ve-line>
+        </Card>
+        </Col>
+       <!-- <Col span="12">
+        <Card>
+          <p slot="title">条形图</p>
+          <ve-bar :data="lineData"
+                   :settings="lineSettings"
+                   height="294px">
+          </ve-bar>
+        </Card>
+        </Col>-->
+      </Row>
+      <Row class="item-row" :gutter="24">
+        <Col span="12">
           <Card>
             <p slot="title">饼图</p>
             <ve-pie :data="pieData"
@@ -122,6 +144,22 @@
         stack: { '售价': ['成本', '利润'] },
         area: true,
       };
+      this.lData = {
+        columns: ['日期', '成本', '利润', '占比', '其他'],
+        rows: [
+          { '成本': 1523, '日期': '1月1日', '利润': 1523, '占比': 0.12, '其他': 100 },
+          { '成本': 1223, '日期': '1月2日', '利润': 1523, '占比': 0.345, '其他': 100 },
+          { '成本': 2123, '日期': '1月3日', '利润': 1523, '占比': 0.7, '其他': 100 },
+          { '成本': 4123, '日期': '1月4日', '利润': 1523, '占比': 0.31, '其他': 100 },
+          { '成本': 3123, '日期': '1月5日', '利润': 1523, '占比': 0.12, '其他': 100 },
+          { '成本': 7123, '日期': '1月6日', '利润': 1523, '占比': 0.65, '其他': 100 }
+        ]
+      }
+      this.lSettings = {
+        metrics: ['成本', '利润'],
+        dimension: ['日期'],
+        smooth: false,
+      }
       this.histogramData = {
         columns: ['日期', '成本', '利润', '占比'],
         rows: [
