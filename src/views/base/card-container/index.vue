@@ -1,30 +1,52 @@
-<style lang="scss">
+<style lang="scss" scoped>
 @import "./index.scss";
 </style>
 <template>
   <section :class="[classes, { 'border': border }, {'shadow': shadow}]">
-    <div v-if="showHead" class="card-container-title clearfix" :class="{'mb-16': showContent}">
-      <slot name="header">
-        <div class="float-left">
-          {{title}}
-        </div>
-        <div class="float-right" v-if="help">
-          <Icon class="cursor-pointer" size="14" color="#80848F" type="ios-help-outline"></Icon>
-        </div>
-      </slot>
+    <div v-if="type === 'normal' || type === 'left'">
+      <div v-if="showHead" class="card-container-title clearfix" :class="{'mb-16': showContent}">
+        <slot name="header">
+          <div class="float-left">
+            {{title}}
+          </div>
+          <div class="float-right" v-if="help">
+            <Icon class="cursor-pointer" size="14" color="#80848F" type="ios-help-outline"></Icon>
+          </div>
+        </slot>
+      </div>
+      <div class="card-container-content" v-if="showContent">
+        <slot name="content">
+          <div class="card-container-content-main" 
+          :class="{'content-main-mb-16': showContentSub}" 
+          v-if="content"
+          :style="stylesContent">{{content}}</div>
+        </slot>
+        <slot name="subContent">
+          <div class="card-container-content-sub" v-if="subContent">
+            <span :class="status" :style="stylesSubContent">{{subContent}}</span>
+          </div>
+        </slot>
+      </div>
     </div>
-    <div class="card-container-content" v-if="showContent">
-      <slot name="content">
-        <div class="card-container-content-main" 
-        :class="{'content-main-mb-16': showContentSub}" 
-        v-if="content"
-        :style="stylesContent">{{content}}</div>
-      </slot>
-      <slot name="subContent">
-        <div class="card-container-content-sub" v-if="subContent">
-          <span :class="status" :style="stylesSubContent">{{subContent}}</span>
-        </div>
-      </slot>
+    <div v-if="type === 'center'">
+      <div class="card-container-content" v-if="showContent">
+        <slot name="content">
+          <div class="card-container-content-main" 
+          :class="{'content-main-mb-16': showContentSub}" 
+          v-if="content"
+          :style="stylesContent">{{content}}</div>
+        </slot>
+        <slot name="subContent">
+          <div class="card-container-content-sub" v-if="subContent">
+            <slot name="header">
+              <span class="card-container-title card-container-title-center" :class="{'mb-16': showContent}" v-if="showHead">
+                {{title}}
+              </span>
+            </slot>
+            <span :class="status" :style="stylesSubContent">{{subContent}}</span>
+          </div>
+        </slot>
+      </div>
     </div>
     <slot></slot>
   </section>
@@ -56,7 +78,10 @@
         default: '',
       },
       // 主要内容字号
-      size: [Number, String],
+      size: {
+        type: [Number, String],
+        default: 30,
+      },
       // 次级内容
       subContent: {
         type: String,
@@ -87,22 +112,23 @@
     },
     data() {
       return {
-        showHead: true,
-        showContent: true,
-        showContentMain: true,
-        showContentSub: true,
+        showHead: true, // 是否显示头部
+        showContent: true, // 是否显示主体部分
+        showContentMain: true, // 是否显示一级主体部分
+        showContentSub: true, // 是否显示次级主体部分
       };
     },
     computed: {
       // 类型
       classes() {
-        return `${prefixCls} ${this.type}`;
+        return `${prefixCls} ${prefixCls}-${this.type}`;
       },
       // content字号
       stylesContent() {
         const style = {};
         if (this.size) {
           style['font-size'] = `${this.size}px`;
+          style['line-height'] = `${this.size}px`;
         }
         return style;
       },
@@ -111,6 +137,9 @@
         const style = {};
         if (this.color) {
           style.color = this.color;
+        }
+        if (this.type === 'left' && this.size) {
+          style['line-height'] = `${this.size}px`;
         }
         return style;
       },
