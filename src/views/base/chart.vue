@@ -57,7 +57,6 @@
                          title="30日趋势"
                          border
                          type="mix"
-                         @on-todo="download"
           ><t-line  :data="lData"
                      :settings="lSettings"
 
@@ -71,7 +70,6 @@
                          title="折线堆积面积图"
                          border
                          type="mix"
-                         @on-todo="download"
           ><t-line :data="lineData"
                     :settings="lineSettings"
                     height="294px">
@@ -85,7 +83,6 @@
                          title="柱状图"
                          border
                          type="mix"
-                         @on-todo="download"
           ><t-histogram :data="histogramData"
                          :settings="histogramSettings"
                          height="294px">
@@ -97,7 +94,6 @@
                          title="柱状堆积图"
                          border
                          type="mix"
-                         @on-todo="download"
           ><t-histogram :data="hData"
                         :settings="hSettings"
                         height="294px">
@@ -111,7 +107,6 @@
                          title="条形图"
                          border
                          type="mix"
-                         @on-todo="download"
           ><t-bar :data="barData"
                   :settings="barSettings"
                   height="294px">
@@ -123,7 +118,6 @@
                          title="雷达图"
                          border
                          type="mix"
-                         @on-todo="download"
           ><t-radar :data="radarData"
                      :settings="radarSettings"
                      height="294px">
