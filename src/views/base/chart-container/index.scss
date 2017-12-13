@@ -1,0 +1,49 @@
+@import "../../../styles/index.scss";
+
+.clearfix {
+  @include clearfix;
+}
+.float-left {
+  @include float-left;
+}
+.float-right {
+  @include float-right;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.chart-container {
+  font-family: PingFangSC-Regular, "Microsoft Yahei";
+  background: #fff;
+  &.border {
+    border: 1px solid #dddee1;
+  }
+  &.shadow {
+    box-shadow: 0 1px 2px 0 rgba(28, 36, 56, .3);
+  }
+  &-title {
+    box-sizing: border-box;
+    height: 56px;
+    padding: 20px 24px;
+    border-bottom: 1px solid #dddee1;
+    .float-left {
+      font-family: PingFangSC-Medium, "Microsoft Yahei";
+      font-size: 16px;
+      line-height: 16px;
+      color: #1c2438;
+    }
+  }
+  &-content {
+    position: relative;
+    padding: 0 24px 24px;
+    .chart-or-table {
+      position: absolute;
+      top: 8px;
+      left: 24px;
+      z-index: 99;
+    }
+    .table-show-area {
+      padding-top: 24px;
+    }
+  }
+}

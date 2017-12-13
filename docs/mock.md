@@ -7,23 +7,10 @@
 $ npm run mock
 ```
 
-## 访问接口
-直接访问 json-server http://localhost:3000/list
+## 新增接口
 
-代理访问 http://localhost:8080/api/list
+mock/list.js
 
-## 配置
-json-server 的入口文件
-```
-const list = require('./list.js').list;
-
-module.exports = () => ({
-  list,
-  user: { name: 'wxnet' },
-});
-```
-
-在 list.js 中使用mockjs模拟数据
 ```
 const Mock = require('mockjs');
 
@@ -33,6 +20,37 @@ module.exports = Mock.mock({
     data: {},
   }],
 });
+```
+
+详细内容请移步: [http://mockjs.com/](http://mockjs.com/)
+
+在 mock/index.js 中注册新接口。
 
 ```
-详细内容请移步: [http://mockjs.com/](http://mockjs.com/)
+const list = require('./list.js').list;
+
+module.exports = () => ({
+  list,
+  user: { name: 'wxnet' },
+});
+
+```
+
+## 访问接口
+
+http://localhost:8080/api/list
+
+本质上访问的接口是通过 webpack 中 devServer 的 proxy功能实现的，可以直接访问 json-server 中的服务地址：http://localhost:3000/list
+
+```
+proxyTable: {
+  '/api': {
+    target: "http://localhost:3000",
+    pathRewrite: {"^/api" : ""}
+  }
+},
+```
+
+## 接口文档
+
+理想状况下，希望直接从 Mock 约定的配置生成前后端依赖的接口文档，修改 Mock 配置即可更新文档。Ant Design Pro 提供了很好的[解决方案](https://pro.ant.design/docs/theme-cn#生成-API-文档)，未来希望能移植到 Vue 技术栈，欢迎各位贡献实现代码。

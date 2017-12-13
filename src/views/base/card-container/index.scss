@@ -1,0 +1,90 @@
+@import "../../../styles/index.scss";
+
+.clearfix {
+  @include clearfix;
+}
+.float-left {
+  @include float-left;
+}
+.float-right {
+  @include float-right;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.card-container {
+  padding: 24px;
+  background: #fff;
+  &.border {
+    border: 1px solid #dddee1;
+  }
+  &.shadow {
+    box-shadow: 0 1px 2px 0 rgba(28, 36, 56, .3);
+  }
+
+  &-title {
+    font-family: PingFang-SC-Regular;
+    font-size: 14px;
+    line-height: 14px;
+    color: #80848f;
+  }
+  &-title-center {
+    padding-right: 8px;
+  }
+  &-content {
+    &-main {
+      font-family: PingFangSC-Regular;
+      font-size: 30px;
+      color: #1c2438;
+      // line-height: 30px;
+      @at-root .card-container-center & {
+        text-align: center;
+      }
+      @at-root .card-container-normal & {
+        display: inline-block;
+      }
+      @at-root .card-container-left & {
+        display: inline-block;
+        padding-left: 8px;
+
+      }
+    }
+    .content-main-mb-16 {
+      @at-root .card-container-center & {
+        margin-bottom: 16px;
+      }
+    }
+    &-sub {
+      font-family: HelveticaNeue;
+      font-size: 14px;
+      line-height: 14px;
+      color: #1c2438;
+      @at-root .card-container-center & {
+        text-align: center;
+        // .float-left {
+        //   padding-right: 8px;
+        // }
+      }
+      @at-root .card-container-normal & {
+        display: inline-block;
+        padding-left: 8px;
+      }
+      @at-root .card-container-left & {
+        float: left;
+      }
+      .error {
+        color: #db425a;
+      }
+      .success {
+        color: #19be6b;
+      }
+      .info {
+        color: #db425a;
+      }
+    }
+  }
+  .mb-16 {
+    margin-bottom: 16px;
+  }
+}
