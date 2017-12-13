@@ -4,113 +4,126 @@
 <template>
   <div class="hello">
     <div class="main-container">
-      <Row class="item-row" :gutter="24">
-        <Col span="12">
-        <Card>
-          <p slot="title">30日趋势</p>
-          <ve-line  :data="lData"
-                    :settings="lSettings"
+      <i-row class="item-row" :gutter="24">
+        <i-col span="12">
+          <outercontaier class="mt-16"
+                         title="30日趋势"
+                         border
+                         type="mix"
+                         @on-todo="download"
+          ><t-line  :data="lData"
+                     :settings="lSettings"
 
-                    :legend-visible="false"
-                    height="294px">
-          </ve-line>
-        </Card>
-        </Col>
-       <!-- <Col span="12">
-        <Card>
-          <p slot="title">条形图</p>
-          <ve-bar :data="lineData"
-                   :settings="lineSettings"
-                   height="294px">
-          </ve-bar>
-        </Card>
-        </Col>-->
-      </Row>
-      <Row class="item-row" :gutter="24">
-        <Col span="12">
-          <Card>
-            <p slot="title">饼图</p>
-            <ve-pie :data="pieData"
-                    :settings="pieSettings"
-                    height="294px">
-            </ve-pie>
-          </Card>
-        </Col>
-        <Col span="12">
-          <Card>
-            <p slot="title">折线堆积面积图</p>
-            <ve-line :data="lineData"
-                     :settings="lineSettings"
+                     :legend-visible="false"
                      height="294px">
-            </ve-line>
-          </Card>
-        </Col>
-      </Row>
-      <Row class="item-row" :gutter="24">
-        <Col span="12">
-          <Card>
-            <p slot="title">柱状图</p>
-            <ve-histogram :data="histogramData"
-                          :settings="histogramSettings"
-                          height="294px">
-            </ve-histogram>
-          </Card>
-        </Col>
-        <Col span="12">
-          <Card>
-            <p slot="title">柱状堆积图</p>
-            <ve-histogram :data="hData"
-                          :settings="hSettings"
-                          height="294px">
-            </ve-histogram>
-          </Card>
-        </Col>
-      </Row>
-      <Row class="item-row" :gutter="24">
-        <Col span="12">
-          <Card>
-            <p slot="title">环形图</p>
-            <ve-ring :data="ringData"
-                     :settings="ringSettings"
-                     height="294px">
-            </ve-ring>
-          </Card>
-        </Col>
-        <Col span="12">
-          <Card>
-            <p slot="title">环形图</p>
-            <ve-ring :data="rData"
-                     :settings="rSettings"
-                     height="294px">
-            </ve-ring>
-          </Card>
-        </Col>
-      </Row>
-      <Row class="item-row" :gutter="24">
-        <Col span="12">
-          <Card>
-            <p slot="title">雷达图</p>
-            <ve-radar :data="radarData"
-                      :settings="radarSettings"
-                      height="294px">
-            </ve-radar>
-          </Card>
-        </Col>
-        <Col span="12">
-          <Card>
-            <p slot="title">条形图</p>
-            <ve-bar :data="barData"
-                    :settings="barSettings"
+          </t-line>
+          </outercontaier>
+        </i-col>
+        <i-col span="12">
+          <outercontaier class="mt-16"
+                         title="折线堆积面积图"
+                         border
+                         type="mix"
+                         @on-todo="download"
+          ><t-line :data="lineData"
+                    :settings="lineSettings"
                     height="294px">
-            </ve-bar>
-          </Card>
-        </Col>
-      </Row>
+          </t-line>
+          </outercontaier>
+        </i-col>
+      </i-row>
+      <i-row class="item-row" :gutter="24">
+        <i-col span="12">
+          <outercontaier class="mt-16"
+                         title="柱状图"
+                         border
+                         type="mix"
+                         @on-todo="download"
+          ><t-histogram :data="histogramData"
+                         :settings="histogramSettings"
+                         height="294px">
+          </t-histogram>
+          </outercontaier>
+        </i-col>
+        <i-col span="12">
+          <outercontaier class="mt-16"
+                         title="柱状堆积图"
+                         border
+                         type="mix"
+                         @on-todo="download"
+          ><t-histogram :data="hData"
+                        :settings="hSettings"
+                        height="294px">
+          </t-histogram>
+          </outercontaier>
+        </i-col>
+      </i-row>
+      <i-row class="item-row" :gutter="24">
+        <i-col span="12">
+          <outercontaier class="mt-16"
+                         title="条形图"
+                         border
+                         type="mix"
+                         @on-todo="download"
+          ><t-bar :data="barData"
+                  :settings="barSettings"
+                  height="294px">
+          </t-bar>
+          </outercontaier>
+        </i-col>
+        <i-col span="12">
+          <outercontaier class="mt-16"
+                         title="雷达图"
+                         border
+                         type="mix"
+                         @on-todo="download"
+          ><t-radar :data="radarData"
+                     :settings="radarSettings"
+                     height="294px">
+          </t-radar>
+          </outercontaier>
+        </i-col>
+      </i-row>
+      <i-row class="item-row" :gutter="24">
+        <i-col span="12">
+          <outercontaier class="mt-16"
+                         title="饼图"
+                         border
+                         type="mix"
+          ><t-pie :data="pieData"
+                     :settings="pieSettings"
+                     height="294px">
+          </t-pie>
+          </outercontaier>
+        </i-col>
+        <i-col span="12">
+          <outercontaier class="mt-16"
+                         title="环形图"
+                         border
+                         type="mix"
+          ><t-ring :data="ringData"
+                    :settings="ringSettings"
+                    height="294px">
+          </t-ring>
+          </outercontaier>
+        </i-col>
+      </i-row>
     </div>
   </div>
 </template>
 
 <script>
+  import { Row, Col, Table, Message } from 'iview';
+  import tLine from 't-charts/lib/line';
+  import tPie from 't-charts/lib/pie';
+  import tHistogram from 't-charts/lib/histogram';
+  import tBar from 't-charts/lib/bar';
+  import tRadar from 't-charts/lib/radar';
+  import tRing from 't-charts/lib/ring';
+  import cardcontaier from './card-container';
+  import chartcontaier from './chart-container';
+  import outercontaier from './outer-container';
+
   export default {
     created() {
       this.pieData = {
@@ -256,6 +269,20 @@
           order: 'desc',
         },
       };
+    },
+    components: {
+      iRow: Row,
+      iCol: Col,
+      iTable: Table,
+      tLine,
+      tRing,
+      tBar,
+      tRadar,
+      tHistogram,
+      tPie,
+      cardcontaier,
+      chartcontaier,
+      outercontaier,
     },
   };
 </script>
