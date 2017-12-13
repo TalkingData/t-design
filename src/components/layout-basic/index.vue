@@ -19,15 +19,13 @@
       </global-menu>
     </div>
     <div class="main-header-con" :style="{paddingLeft: shrink?'60px':'200px'}">
-      <div class="main-header">
-        <div class="navicon-con">
-          <i-button :style="{transform: 'rotateZ(' + (this.shrink ? '-90' : '0') + 'deg)'}" type="text" @click="toggleClick">
-            <Icon type="navicon" size="32"></Icon>
-          </i-button>
-        </div>
-        <div class="header-avator-con">
-        </div>
-      </div>
+      <theader 
+      :shrink="shrink" 
+      :notice="3"
+      :language="language"
+      @on-toggle="toggleClick" 
+      @on-show-notice="showNotice"
+      @on-change-language="changeLanguage"></theader>
     </div>
     <div class="single-page-con" :style="{left: shrink?'60px':'200px'}">
       <div class="single-page">
@@ -42,6 +40,7 @@ import { Button, Icon } from 'iview';
 import globalMenu from '../global-menu/global-menu';
 import tfooter from '../global-footer';
 import core from '../../mixins/core';
+import theader from '../../views/base/header';
 
 export default {
   mixins: [core],
@@ -50,6 +49,7 @@ export default {
     Icon,
     globalMenu,
     tfooter,
+    theader,
   },
   props: {
     logo: {
@@ -73,6 +73,7 @@ export default {
       // openedSubmenuArr: [], // 要展开的菜单数组
       menuTheme: 'dark',
       menuList: [],
+      language: 'EN',
     };
   },
   computed: {
@@ -92,8 +93,9 @@ export default {
   },
   methods: {
     // 展开与关闭左侧栏
-    toggleClick() {
-      this.shrink = !this.shrink;
+    toggleClick(value) {
+      // this.shrink = !this.shrink;
+      this.shrink = value;
     },
     // 路由切换
     handleSubmenuChange() {
@@ -107,6 +109,13 @@ export default {
       //     return true;
       // }
       return true;
+    },
+    // 展示通知
+    showNotice() {
+    },
+    // 修改语言
+    changeLanguage(value) {
+      this.language = value;
     },
   },
   watch: {
