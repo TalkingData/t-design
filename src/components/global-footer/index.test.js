@@ -14,7 +14,7 @@ describe('GlobalHeader test', () => {
   });
 
   it('should render correct contents', () => {
-    cmp.setData({ title: 'TD' })
-    expect(cmp.vm.$el.textContent.trim()).toEqual('Copyright TD Tendcloud');
+    // cmp.setData({ title: 'TD' })
+    expect(cmp.vm.$el.textContent.trim()).toEqual('Copyright © TalkingData');
   });
 });

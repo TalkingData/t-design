@@ -28,8 +28,8 @@ describe('GlobalHeader test', () => {
   });
 
   it('should render correct contents', () => {
-    wrapper.setData({ title: 'TD' })
-    expect(wrapper.vm.$el.textContent.trim()).toEqual('Copyright TD Tendcloud');
+    // wrapper.setData({ title: 'TD' })
+    expect(wrapper.vm.$el.textContent.trim()).toEqual('Copyright © TalkingData');
   });
 });
 ```
