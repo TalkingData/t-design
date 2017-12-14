@@ -7,8 +7,7 @@
           border
           type="normal"
         ><t-line :data="chartData"
-                    :settings="chartSettings"
-        >
+                 :settings="chartSettings">
         </t-line>
         </cardcontaier>
       </i-col>
