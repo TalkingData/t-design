@@ -132,8 +132,9 @@
                          border
                          type="mix"
           ><t-pie :data="pieData"
-                     :settings="pieSettings"
-                     height="294px">
+                  :settings="pieSettings"
+                  height="294px"
+                  :legend-position="piePosition">
           </t-pie>
           </outercontaier>
         </i-col>
@@ -144,7 +145,8 @@
                          type="mix"
           ><t-ring :data="ringData"
                     :settings="ringSettings"
-                    height="294px">
+                    height="294px"
+                    :legend-position="piePosition">
           </t-ring>
           </outercontaier>
         </i-col>
@@ -183,6 +185,7 @@
         metrics: '利润',
         offsetY: 150,
       };
+      this.piePosition = 'right',
       this.lineData = {
         columns: ['日期', '成本', '利润', '占比', '其他'],
         rows: [
