@@ -1,7 +1,7 @@
 export default {
   'en-US': {
     'global-footer': {
-      hello: 'Tendcloud',
+      hello: 'TalkingData',
     },
   },
   'zh-CN': {
