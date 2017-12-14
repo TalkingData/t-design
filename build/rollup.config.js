@@ -32,29 +32,6 @@ pkgTypeList.forEach(({ type, min, suffix }) => {
   })
 })
 
-// for unpkg.com
-Object.keys(componentInfo).forEach(name => {
-  const { src } = componentInfo[name]
-  pkg.push({
-    unpkg: true,
-    src,
-    min: true,
-    type: 'umd',
-    suffix: '.min.js',
-    globalName: name,
-    dist: `umd/${name}`
-  })
-  pkg.push({
-    unpkg: true,
-    src,
-    min: false,
-    type: 'umd',
-    suffix: '.js',
-    globalName: name,
-    dist: `umd/${name}`
-  })
-})
-
 // const addons = [
 //   {
 //     min: false,
@@ -72,11 +49,6 @@ pkg.forEach(item => { rollupFn(item) })
 function rollupFn (item) {
   let cssPath = `components/${item.globalName}/style.css`;
   let cssMinPath = `components/${item.globalName}/style.min.css`;
-
-  if (item.unpkg) {
-    cssPath = `umd/${item.globalName}.css`;
-    cssMinPath = `umd/${item.globalName}.min.css`;
-  }
 
   const vueSettings = item.min
     ? { css: cssMinPath, postcss: [autoprefixer, cssnano] }

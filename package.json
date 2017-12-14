@@ -1,11 +1,10 @@
 {
   "name": "t-design",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "t-design",
   "author": "TalkingData T-Design team",
   "files": [
-    "components",
-    "umd"
+    "components"
   ],
   "scripts": {
     "mock": "./node_modules/.bin/json-server mock/index.js",
@@ -32,7 +31,7 @@
     "apischema": "0.0.28",
     "iview": "^2.7.4",
     "normalize.css": "^7.0.0",
-    "t-charts": "^1.0.0",
+    "t-charts": "^1.2.2",
     "vue": "^2.5.2",
     "vue-i18n": "^7.3.2",
     "vue-router": "^3.0.1"
