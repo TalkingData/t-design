@@ -1,5 +1,6 @@
 .DS_Store
 /components
+/umd
 site
 node_modules/
 coverage/
