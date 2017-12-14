@@ -7,19 +7,36 @@
   <meta name="description" content="t-design">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+  <link rel="stylesheet" href="//unpkg.com/vuep/dist/vuep.css">
 </head>
 <body>
   <div id="app"></div>
   <script>
+    /*eslint-disable */
     window.$docsify = {
       name: 'T-Design',
       repo: '',
       loadSidebar: 'sidebar.md',
       homepage: 'index.md',
       coverpage: 'cover.md',
+      formatUpdated: '{MM}/{DD} {HH}:{mm}',
+      plugins: [
+        function(hook, vm) {
+          hook.beforeEach(function (html) {
+            var url = 'https://github.com/TalkingData/t-design/blob/master/docs/' + vm.route.file
+            var editHtml = '[:memo: Edit Document](' + url + ')\n'
+            return editHtml
+              + html
+              + '\n----\n'
+              + 'Last modified {docsify-updated} '
+              + editHtml
+          })
+        }
+      ]
     };
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-bash.js"></script>
   <script src="//unpkg.com/vue/dist/vue.min.js"></script>
  <script src="//unpkg.com/vuep/dist/vuep.min.js"></script>
 </body>
