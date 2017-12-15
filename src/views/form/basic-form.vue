@@ -1,15 +1,15 @@
 <template>
   <div class="form-step">
     <Row class="form-step-row">
-      <Col class="form-step-row-title" :sm="5" :lg="3">表单名称</Col>
-      <Col span="8">
-        <Input
+      <iCol class="form-step-row-title" :sm="5" :lg="3">表单名称</iCol>
+      <iCol span="8">
+        <iInput
           placeholder="步骤表单名称">
-        </Input>
-      </Col>
+        </iInput>
+      </iCol>
     </Row>
     <p class="form-step-info">{{ formDescription }}</p>
-    <Form class="form-step-iform"
+    <iForm class="form-step-iform"
       :label-width="80"
       :models="formDynamic">
       <FormItem
@@ -17,31 +17,43 @@
         v-for="(item, index) in formDynamic.items"
         :label="labelName + (index + 1)">
         <Row>
-          <Col span="11">
-            <Input></Input>
-          </Col>
-          <Col span="1" offset="10">
+          <iCol span="11">
+            <iInput></iInput>
+          </iCol>
+          <iCol span="1" offset="10">
             <Icon
               type="ios-minus-outline"
               class="form-step-close"
               size="16"
               @click.native="handleRemove(index)">
             </Icon>
-          </Col>
+          </iCol>
         </Row>
       </FormItem>
       <FormItem class="form-step-iform-btn">
-        <Button type="primary" shape="circle" @click="handleAdd">新增步骤</Button>
+        <iButton type="primary" shape="circle" @click="handleAdd">新增步骤</iButton>
       </FormItem>
       <FormItem class="form-step-iform-set">
-        <Button type="primary" style="width:20%;">保存</Button>
-        <Button type="text" style="margin-left: 8px">清空</Button>
+        <iButton type="primary" style="width:20%;">保存</iButton>
+        <iButton type="text" style="margin-left: 8px">清空</iButton>
       </FormItem>
-    </Form>
+    </iForm>
   </div>
 </template>
 <script>
+  import { Row, Col, Input, Form, FormItem, Button, Icon } from 'iview';
+
   export default {
+    name: 'BasisForm',
+    components: {
+      Row,
+      iCol: Col,
+      iInput: Input,
+      iForm: Form,
+      FormItem,
+      iButton: Button,
+      Icon,
+    },
     data() {
       return {
         labelName: 'Step',
