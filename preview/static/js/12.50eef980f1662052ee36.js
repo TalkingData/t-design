@@ -1,2 +1,0 @@
-webpackJsonp([12],{dOf8:function(e,n,l){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var t=function(){var e=this,n=e.$createElement;return(e._self._c||n)("div",{staticClass:"hello"},[e._v("\n  分析页\n")])},r=[],s={render:t,staticRenderFns:r},u=s,a=l("VU/8"),c=a(null,u,!1,null,null,null);n.default=c.exports}});
-//# sourceMappingURL=12.50eef980f1662052ee36.js.map
