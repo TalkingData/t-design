@@ -8,6 +8,7 @@ import Tcharts from 't-charts';
 import App from './app';
 import router from './router';
 
+
 Vue.use(VueI18n);
 // Vue.use(iView);
 Vue.use(Tcharts);
