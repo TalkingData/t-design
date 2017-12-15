@@ -14,18 +14,17 @@
           <Icon type="ios-bell-outline" size="26"></Icon>
         </Badge>
       </div>
-      <div class="change-language">
+      <div class="change-language" v-if="languageList.length > 0">
         <Row type="flex" justify="end" align="middle">
           <Dropdown transfer trigger="click" @on-click="changeLanguage">
             <i class="language-kind cursor-pointer">{{language}}</i>
             <DropdownMenu slot="list">
-              <DropdownItem name="EN">EN</DropdownItem>
-              <DropdownItem name="CN" divided>CN</DropdownItem>
+              <DropdownItem  v-for="(item, index) in languageList" :name="item" :key="index">{{item}}</DropdownItem>
             </DropdownMenu>
           </Dropdown>
         </Row>
       </div>
-      <div class="user-dropdown-menu-con">
+      <div class="user-dropdown-menu-con" v-if="personalList.length > 0">
         <Row type="flex" justify="end" align="middle" class="user-dropdown-innercon">
           <Dropdown transfer trigger="click" @on-click="handleClickUserDropdown">
             <a href="javascript:void(0)">
@@ -34,8 +33,10 @@
             </a>
             <Icon type="person" size="18"></Icon>
             <DropdownMenu slot="list">
-              <DropdownItem name="ownSpace">个人中心</DropdownItem>
-              <DropdownItem name="loginout" divided>退出登录</DropdownItem>
+              <DropdownItem v-for="(item, index) in personalList" 
+              :name="item.name"
+              :key="index"
+              >{{item.label}}</DropdownItem>
             </DropdownMenu>
           </Dropdown>
         </Row>
@@ -72,13 +73,25 @@
         type: String,
         default: 'EN',
       },
+      languageList: {
+        type: Array,
+        default: () => [],
+      },
       // 通知
       notice: [Number, String],
+      userName: {
+        type: String,
+        default: '',
+      },
+      personalList: {
+        type: Array,
+        default: () => [],
+      },
     },
     data() {
       return {
         tabValue: 'chart',
-        userName: 'ceshi',
+        // userName: 'ceshi',
       };
     },
     methods: {
@@ -88,7 +101,9 @@
         this.$emit('on-toggle', shrink);
       },
       // 查看用户信息
-      handleClickUserDropdown() {},
+      handleClickUserDropdown(name) {
+        this.$emit('on-show-personal', name);
+      },
       // 修改语言
       changeLanguage(name) {
         this.$emit('on-change-language', name);

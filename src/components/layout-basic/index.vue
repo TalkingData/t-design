@@ -23,6 +23,10 @@
       :shrink="shrink" 
       :notice="3"
       :language="language"
+      :language-list="languageList"
+      :personal-list="personalList"
+      userName="ceshi"
+      @on-show-personal="showUserInfo"
       @on-toggle="toggleClick" 
       @on-show-notice="showNotice"
       @on-change-language="changeLanguage"></theader>
@@ -74,6 +78,15 @@ export default {
       menuTheme: 'dark',
       menuList: [],
       language: 'EN',
+      languageList: ['EN', 'CN'], // 语言列表
+      // 个人中心
+      personalList: [{
+        label: '个人中心',
+        name: 'ownSpace',
+      }, {
+        label: '退出登录',
+        name: 'loginout',
+      }],
     };
   },
   computed: {
@@ -110,6 +123,8 @@ export default {
       // }
       return true;
     },
+    // 查看用户信息
+    showUserInfo() {},
     // 展示通知
     showNotice() {
     },

@@ -32,6 +32,7 @@
       display: inline-block;
       width: 40px;
       padding: 18px 0;
+      margin-right: 8px;
       text-align: center;
       cursor: pointer;
       i {
@@ -42,7 +43,6 @@
       &-menu-con {
         display: inline-block;
         padding: 18px 0;
-        margin-left: 16px;
         .main-user-name {
           display: inline-block;
           overflow: hidden;
@@ -60,7 +60,7 @@
     }
     .change-language {
       display: inline-block;
-      margin-left: 8px;
+      margin-right: 16px;
       .language-kind {
         display: inline-block;
         width: 24px;
