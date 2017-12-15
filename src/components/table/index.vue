@@ -12,54 +12,62 @@
                v-if="tableTools.setting && tableTools.setting.show"
               class="setting-circle table-tool-item">
               <a :href="tableTools.setting.url">
-                <Icon 
+                <t-icon 
                   type="android-settings"
                   size="20"
-                ></Icon>
+                ></t-icon>
               </a>
             </span>
-            <Input
+            <t-input
               v-if="tableTools.search && tableTools.search.show"
               class="search-box table-tool-item" 
               v-model="searchVul" 
               icon="ios-search" 
               placeholder="Enter something..."
-            ></Input>
+            ></t-input>
             <span 
               v-if="tableTools.download && tableTools.download.show"
               class="table-tool-item" @click="exportData">
-              <Icon 
+              <t-icon 
                 type="ios-download-outline"
                 size="20"
-              ></Icon>
+              ></t-icon>
             </span>
-            <Poptip 
+            <t-poptip 
               v-if="tableTools.help && tableTools.help.show"
               trigger="hover" 
               :title="tableTools.help.title" 
               :content="tableTools.help.content"
               placement="bottom-end"
             >
-              <Icon 
+              <t-icon 
                 class="table-tool-item"
                 type="ios-help-outline"
                 size="20"
-              ></Icon>
-            </Poptip>
+              ></t-icon>
+            </t-poptip>
           </div>
         </div>
-        <Table
+        <t-table
           :columns="tableData.columns" 
           :data="tableData.data"
           ref="table"
-        ></Table>
+        ></t-table>
       </div>
     </div>
 
   </div>
 </template>
 <script>
+  import { Table, Icon, Poptip, Input } from 'iview';
+
   export default {
+    components: {
+      tTable: Table,
+      tIcon: Icon,
+      tPoptip: Poptip,
+      tInput: Input,
+    },
     props: {
       tableTitle: {
         type: Object,
