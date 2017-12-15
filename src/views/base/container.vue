@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    
+
     <i-row class="chart-show-area">
       <!-- <chartcontaier title="累计设备">
         <div slot="chart">
@@ -17,7 +17,7 @@
           </div>
         </div>
       </chartcontaier> -->
-      <outercontaier 
+      <outercontaier
         title="新增设备"
         border
         type="tab"
@@ -40,7 +40,7 @@
         </i-row>
         <i-row>
           <i-col span="6" class="pr-8">
-            <cardcontaier 
+            <cardcontaier
             title="title"
             content="content"
             subContent="subContent"
@@ -52,7 +52,7 @@
             <div class="mt-16">type:normal;含有title,content,sub-content</div>
           </i-col>
           <i-col span="6" class="pr-8">
-            <cardcontaier 
+            <cardcontaier
             title="title"
             content="content"
             subContent="subContent"
@@ -65,7 +65,7 @@
             <div class="mt-16">type:normal;含有title,content,sub-content;不含help</div>
           </i-col>
           <i-col span="6" class="pr-8">
-            <cardcontaier 
+            <cardcontaier
             title="日均下单量"
             content="32,625,318"
             sub-content="-12.15%"
@@ -78,7 +78,7 @@
             <div class="mt-16">type:center;content,sub-content;无title</div>
           </i-col>
           <i-col span="6" class="pr-8">
-            <cardcontaier 
+            <cardcontaier
             content="32,625,318"
             size="20"
             sub-content="日均下单量"
@@ -105,7 +105,7 @@
 
 <script>
 import { Row, Col, Table, Message } from 'iview';
-import tLine from 't-charts/src/packages/line';
+import tLine from 't-charts/lib/line';
 import cardcontaier from './card-container';
 import chartcontaier from './chart-container';
 import outercontaier from './outer-container';
