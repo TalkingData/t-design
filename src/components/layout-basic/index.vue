@@ -19,15 +19,15 @@
       </global-menu>
     </div>
     <div class="main-header-con" :style="{paddingLeft: shrink?'60px':'200px'}">
-      <theader 
-      :shrink="shrink" 
+      <theader
+      :shrink="shrink"
       :notice="3"
       :language="language"
       :language-list="languageList"
       :personal-list="personalList"
-      userName="ceshi"
+      userName="td"
       @on-show-personal="showUserInfo"
-      @on-toggle="toggleClick" 
+      @on-toggle="toggleClick"
       @on-show-notice="showNotice"
       @on-change-language="changeLanguage"></theader>
     </div>
