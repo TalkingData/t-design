@@ -35,3 +35,34 @@ Airbnb 的 [javascript规范](http://airbnb.io/javascript/)
   }
 }
 ```
+
+## 组件命名规范
+T Design 建议，组件名称无论用在单文件组件、dom模块，命名上都使用 kebab-case 风格，以 `ve-` 为前缀，表明这是 vue element.
+
+```html
+<ve-row class="item-row" :gutter="24">
+  <ve-col span="6" class="pr-8">
+    <ve-contaier-card
+      title="日均下单量"
+      content="32,625"
+      subContent="-12.15%"
+      status="error"
+      border
+      type="normal"
+    >
+    </ve-contaier-card>
+  </ve-col>
+  <ve-col span="6" class="pr-8">
+    <ve-contaier-card
+      title="日均下单量"
+      content="32,625"
+      subContent="-12.15%"
+      status="error"
+      :help="false"
+      border
+      type="normal"
+    >
+    </ve-contaier-card>
+  </ve-col>
+</ve-row>
+```
