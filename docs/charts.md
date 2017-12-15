@@ -5,9 +5,9 @@
 <script v-pre type="text/x-template" id="example">
 <template>
   <div>
-    <line-mini  :data="chartData"
-               :settings="chartSettings">
-    </line-mini>
+    <ve-line-mini  :data="chartData"
+                   :settings="chartSettings">
+    </ve-line-mini>
   </div>
 </template>
 
@@ -40,9 +40,9 @@
 <script v-pre type="text/x-template" id="example">
 <template>
   <div>
-    <t-line :data="chartData"
-               :settings="chartSettings">
-    </t-line>
+    <ve-histogram-mini :data="chartData"
+                 :settings="chartSettings">
+    </ve-histogram-mini>
   </div>
 </template>
 
