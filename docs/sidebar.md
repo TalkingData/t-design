@@ -4,6 +4,7 @@
  - [路由和菜单](/router-and-nav)
  - [新增页面](/new-page)
  - [新增业务组件](/new-component)
+ - [规范化](/normalize)
  - [样式](/style)
  - [和服务端进行交互](/server)
  - [构建和发布](/deploy)

@@ -1,6 +1,6 @@
 <template>
   <footer class="t-design-g-footer">
-    Copyright {{title}} {{ $t('global-footer.hello') }}
+    Copyright &copy; {{ $t('global-footer.hello') }}
   </footer>
 </template>
 <script>
@@ -14,9 +14,7 @@ export default {
     msg: String,
   },
   data() {
-    return {
-      title: 'test',
-    };
+    return {};
   },
   created() {
     this.$bus.$emit('testEvent', {

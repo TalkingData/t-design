@@ -14,6 +14,7 @@ describe('GlobalHeader test', () => {
   });
 
   it('should render correct contents', () => {
-    expect(cmp.vm.$el.textContent.trim()).toEqual('Copyrighttesthaha');
+    // cmp.setData({ title: 'TD' })
+    expect(cmp.vm.$el.textContent.trim()).toEqual('Copyright © TalkingData');
   });
 });

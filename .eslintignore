@@ -4,4 +4,7 @@
 /*.js
 /test/unit/coverage/
 *.test.js
+/src/views/base/chart.vue
+/src/views/charts/chart1.vue
+*.spec.js
 /src/libs/

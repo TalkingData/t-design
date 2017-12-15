@@ -1,6 +1,10 @@
 <template>
   <div class="table-view">
-    table1
+    <div class="columns">
+  <div class="column is-half">is-half</div>
+  <div class="column">Auto</div>
+  <div class="column">Auto</div>
+</div>
   </div>
 </template>
 
