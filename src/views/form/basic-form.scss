@@ -1,0 +1,125 @@
+.form-step {
+  padding: 48px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px 0 #e3e8ee;
+
+  &-row {
+    padding-bottom: 30px;
+    border-bottom: 2px solid #ccc;
+
+    &-title {
+      font-family: PingFangSC-Semibold;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 32px;
+      color: #464c5b;
+      text-align: left;
+    }
+  }
+
+  &-close {
+    cursor: pointer;
+  }
+
+  &-info {
+    padding: 28px 0;
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: #464c5b;
+    text-align: left;
+  }
+
+  &-iform {
+
+    &-item {
+      padding: 8px 16px;
+      background: #f7f8f8;
+
+      & > .ivu-form-item-label {
+        font-family: PingFangSC-Semibold;
+        font-size: 14px;
+        font-weight: 600;
+        color: #464c5b;
+        text-align: left !important;
+      }
+
+      & > .ivu-form-item-content {
+
+        & > .ivu-row {
+          & .ivu-form-item-label {
+            font-family: PingFangSC-Regular;
+            font-size: 12px;
+            color: #9ea7b4;
+          }
+
+          & .ivu-form-item-content {
+            display: inline-block;
+            width: 65%;
+          }
+        }
+      }
+    }
+
+    &-btn {
+      text-align: left;
+
+      & > .ivu-form-item-content {
+        margin-left: 0 !important;
+      }
+    }
+
+    &-set {
+      text-align: left;
+    }
+
+  }
+
+  @media (max-width: 1024px) {
+    &-iform {
+      padding-right: 0;
+      &-set {
+        position: relative;
+        padding-top: 30px;
+        margin-top: 30px;
+
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          content: "";
+          border-top: 2px solid #d7dde4;
+        }
+
+        & > .ivu-form-item-content {
+          margin-left: 0 !important;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1025px) {
+    &-iform {
+      padding-right: 20%;
+      &-set {
+        position: relative;
+        padding-top: 30px;
+        margin-top: 30px;
+
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 125%;
+          content: "";
+          border-top: 2px solid #d7dde4;
+        }
+
+        & > .ivu-form-item-content {
+          margin-left: 0 !important;
+        }
+      }
+    }
+  }
+}
