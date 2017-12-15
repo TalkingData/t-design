@@ -27,6 +27,7 @@ const i18n = new VueI18n({
   },
 });
 
+Vue.use(iView);
 Vue.config.productionTip = false;
 
 
