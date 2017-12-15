@@ -5,27 +5,31 @@
   <div class="hello">
     <div class="main-container">
       <i-row class="item-row" :gutter="24">
-        <i-col span="6" class="pr-8">
-          <cardcontaier
-            title="日均下单量"
-            content="32,625"
-            subContent="-12.15%"
-            status="error"
-            border
-            type="normal"
-          >
+        <i-col span="6"
+               class="pr-8">
+          <cardcontaier border
+                        type="normal"
+                        title="日均下单量">
+            <histogram-mini :data="hiData"
+                            :settings="hiSettings"
+                            :grid="miniGrid"
+                            height="70px" >
+            </histogram-mini>
           </cardcontaier>
         </i-col>
-        <i-col span="6" class="pr-8">
-          <cardcontaier
-            title="日均下单量"
-            content="32,625"
-            subContent="-12.15%"
-            status="error"
-            :help="false"
-            border
-            type="normal"
-          >
+        <i-col span="6"
+               class="pr-8">
+          <cardcontaier border
+                        type="normal"
+                        title="日均下单量"
+                        content="32,625"
+                        subContent="-12.15%"
+                        status="error">
+            <line-mini :data="chartData"
+                       :settings="chartSettings"
+                       :grid="miniGrid"
+                       height="70px">
+            </line-mini>
           </cardcontaier>
         </i-col>
         <i-col span="6" class="pr-8">
@@ -163,12 +167,24 @@
   import tBar from 't-charts/lib/bar';
   import tRadar from 't-charts/lib/radar';
   import tRing from 't-charts/lib/ring';
+  import lineMini from 't-charts/lib/line-mini';
+  import barMini from 't-charts/lib/bar-mini';
+  import histogramMini from 't-charts/lib/histogram-mini';
   import cardcontaier from './card-container';
   import chartcontaier from './chart-container';
   import outercontaier from './outer-container';
 
   export default {
     created() {
+      this.miniGrid = {
+        show: false,
+        left: '0%',
+        right: '10%',
+        top: '0%',
+        bottom: '0%',
+        containLabel: false,
+        padding: 0
+      };
       this.pieData = {
         columns: ['日期', '成本', '利润'],
         rows: [
@@ -313,6 +329,42 @@
           order: 'desc',
         },
       };
+      this.chartData = {
+        columns: ['日期', '成本'],
+        rows: [
+          { '日期': '1月1日', '成本': 1523 },
+          { '日期': '1月2日', '成本': 1223 },
+          { '日期': '1月3日', '成本': 2123 },
+          { '日期': '1月4日', '成本': 4123 },
+          { '日期': '1月5日', '成本': 3123 },
+          { '日期': '1月6日', '成本': 8123 },
+        ],
+      }
+      this.chartSettings = {
+        stack: { '售价': ['成本', '利润'] },
+        area: true,
+      };
+      this.hiData = {
+        columns: ['日期', '成本'],
+        rows: [
+          { '日期': '1月1日', '成本': 1523 },
+          { '日期': '1月2日', '成本': 1223 },
+          { '日期': '1月3日', '成本': 2123 },
+          { '日期': '1月4日', '成本': 4123 },
+          { '日期': '1月5日', '成本': 3123 },
+          { '日期': '1月6日', '成本': 8123 },
+          { '日期': '1月1日', '成本': 1523 },
+          { '日期': '1月2日', '成本': 1223 },
+          { '日期': '1月3日', '成本': 2123 },
+          { '日期': '1月4日', '成本': 4123 },
+          { '日期': '1月5日', '成本': 3123 },
+          { '日期': '1月6日', '成本': 8123 },
+        ],
+      }
+      this.hiSettings = {
+        stack: { '售价': ['成本', '利润'] },
+        area: true,
+      };
     },
     components: {
       iRow: Row,
@@ -324,6 +376,9 @@
       tRadar,
       tHistogram,
       tPie,
+      lineMini,
+      barMini,
+      histogramMini,
       cardcontaier,
       chartcontaier,
       outercontaier,
