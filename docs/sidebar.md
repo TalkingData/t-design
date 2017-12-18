@@ -14,6 +14,8 @@
  - [UI test](/ui-test)
  - [独立使用 T-Design 组件](/use-components-alone)
  - [使用 API 文档工具](/api-doc)
+- 组件库
+ - [代码编辑器](/components/editor-code)
 - 其它
  - [更新日志](/changelog)
  - [常见问题](/faq)

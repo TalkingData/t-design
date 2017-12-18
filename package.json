@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "apischema": "0.0.28",
+    "codemirror": "^5.32.0",
     "iview": "^2.7.4",
     "normalize.css": "^7.0.0",
     "t-charts": "^1.2.2",

@@ -103,6 +103,29 @@ const menu = [
       },
     ],
   },
+  {
+    path: '/editor',
+    icon: 'stats-bars',
+    name: 'editor',
+    title: '编辑器',
+    // component: Layout,
+    children: [
+      {
+        path: 'editor-code',
+        title: 'Code 编辑器',
+        name: 'editor-code',
+        // eslint-disable-next-line
+        component: (resolve) => require(['../views/editor/code.vue'], resolve),
+      },
+      {
+        path: 'editor-markdown',
+        title: 'Markdown 编辑器',
+        name: 'editor-markdown',
+        // eslint-disable-next-line
+        component: (resolve) => require(['../views/editor/markdown.vue'], resolve),
+      },
+    ],
+  },
 ];
 
 export { layout, menu, logo, logoMini };
