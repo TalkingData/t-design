@@ -113,7 +113,7 @@ function rollupFn (item) {
 
   rollup.rollup({
     input: item.src,
-    // external: id => /^iview/.test(id),
+    external: ['codemirror'],
     plugins
   }).then(function (bundle) {
     const dest = item.dist + item.suffix
@@ -122,9 +122,9 @@ function rollupFn (item) {
       format: item.type,
       // moduleName: item.globalName,
       name: item.globalName,
-      // globals: {
-      //   'iview/src/components/dropdown': 'Dropdown'
-      // },
+      globals: {
+        'codemirror': 'CodeMirror'
+      },
       file: dest
     })
   }).catch((e) => {

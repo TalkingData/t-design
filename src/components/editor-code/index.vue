@@ -7,8 +7,6 @@
 
 <script>
 import CodeMirror from 'codemirror';
-import 'codemirror/lib/codemirror.css';
-import 'codemirror/theme/material.css';
 import 'codemirror/mode/python/python';
 import 'codemirror/mode/javascript/javascript';
 
@@ -65,14 +63,6 @@ export default {
 };
 </script>
 
-<style>
-.editor-code {
-  height: 400px;
-}
-.CodeMirror {
-  height: 100%;
-}
-.json-editor .cm-s-rubyblue span.cm-string {
-  color: #F08047;
-}
+<style lang="scss">
+@import "index.scss";
 </style>
