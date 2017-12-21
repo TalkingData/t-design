@@ -8,6 +8,6 @@
 </template>
 <script>
   export default {
-    name: 'Imain',
+    name: 'VeMain',
   };
 </script>

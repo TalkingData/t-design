@@ -4,44 +4,44 @@
 <template>
   <div>
     <div class="item">
-      <icontainer>
-        <iheader>Vue</iheader>
-        <icontainer>
-          <iaside>menu</iaside>
-          <icontainer>
-            <imain>cnontent</imain>
-            <ifooter>footer</ifooter>
-          </icontainer>
-        </icontainer>
-      </icontainer>
+      <ve-container>
+        <ve-header>Vue</ve-header>
+        <ve-container>
+          <ve-aside>menu</ve-aside>
+          <ve-container>
+            <ve-main>cnontent</ve-main>
+            <ve-footer>footer</ve-footer>
+          </ve-container>
+        </ve-container>
+      </ve-container>
     </div>
 
     <div class="item">
-      <icontainer>
-        <iheader >Vue</iheader>
-        <imain>cnontent</imain>
-        <ifooter>footer</ifooter>
-      </icontainer>
+      <ve-container>
+        <ve-header>Vue</ve-header>
+        <ve-main>cnontent</ve-main>
+        <ve-footer>footer</ve-footer>
+      </ve-container>
     </div>
     <div class="item">
-      <icontainer>
-        <iheader >Vue</iheader>
-        <icontainer>
-          <iaside>menu</iaside>
-          <imain>cnontent</imain>
-        </icontainer>
-        <ifooter>footer</ifooter>
-      </icontainer>
+      <ve-container>
+        <ve-header >Vue</ve-header>
+        <ve-container>
+          <ve-aside>menu</ve-aside>
+          <ve-main>cnontent</ve-main>
+        </ve-container>
+        <ve-footer>footer</ve-footer>
+      </ve-container>
     </div>
     <div class="item">
-      <icontainer>
-        <iheader >Vue</iheader>
-        <icontainer>
-          <imain>cnontent</imain>
-          <iaside>menu</iaside>
-        </icontainer>
-        <ifooter>footer</ifooter>
-      </icontainer>
+      <ve-container>
+        <ve-header>Vue</ve-header>
+        <ve-container>
+          <ve-main>cnontent</ve-main>
+          <ve-aside>menu</ve-aside>
+        </ve-container>
+        <ve-footer>footer</ve-footer>
+      </ve-container>
     </div>
   </div>
 </template>
@@ -52,11 +52,11 @@ import { container, header, aside, main, footer } from '../../components';
 export default {
   name: 'Layout',
   components: {
-    icontainer: container,
-    imain: main,
-    iheader: header,
-    iaside: aside,
-    ifooter: footer,
+    've-container': container,
+    've-main': main,
+    've-header': header,
+    've-aside': aside,
+    've-footer': footer,
   },
 };
 </script>

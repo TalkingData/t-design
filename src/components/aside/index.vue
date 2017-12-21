@@ -8,8 +8,8 @@
 </template>
 <script>
   export default {
-    name: 'Iaside',
-    componentName: 'Iaside',
+    name: 'VeAside',
+    componentName: 'VeAside',
     props: {
       width: {
         type: String,

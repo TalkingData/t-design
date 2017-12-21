@@ -8,7 +8,7 @@
 </template>
 <script>
   export default {
-    name: 'Iheader',
+    name: 'VeHeader',
     props: {
       height: {
         type: String,

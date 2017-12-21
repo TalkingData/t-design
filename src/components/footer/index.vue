@@ -9,7 +9,7 @@
 </template>
 <script>
   export default {
-    name: 'Ifooter',
+    name: 'VeFooter',
     props: {
       height: {
         type: String,

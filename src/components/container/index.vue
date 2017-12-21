@@ -8,7 +8,7 @@
 </template>
 <script>
   export default {
-    name: 'Icontainer',
+    name: 'VeContainer',
     props: {
       direction: String,
     },
@@ -22,7 +22,7 @@
         return this.$slots && this.$slots.default
           ? this.$slots.default.some((vnode) => {
             const tag = vnode.componentOptions && vnode.componentOptions.tag;
-            return tag === 'iheader' || tag === 'ifooter';
+            return tag === 've-header' || tag === 've-footer';
           })
           : false;
       },
