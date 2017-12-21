@@ -12,7 +12,6 @@
                         title="日均下单量">
             <histogram-mini :data="hiData"
                             :settings="hiSettings"
-                            :grid="miniGrid"
                             height="70px" >
             </histogram-mini>
           </cardcontaier>
@@ -27,7 +26,6 @@
                         status="error">
             <line-mini :data="chartData"
                        :settings="chartSettings"
-                       :grid="miniGrid"
                        height="70px">
             </line-mini>
           </cardcontaier>
@@ -176,15 +174,6 @@
 
   export default {
     created() {
-      this.miniGrid = {
-        show: false,
-        left: '0%',
-        right: '10%',
-        top: '0%',
-        bottom: '0%',
-        containLabel: false,
-        padding: 0
-      };
       this.pieData = {
         columns: ['日期', '成本', '利润'],
         rows: [
