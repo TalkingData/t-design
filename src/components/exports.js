@@ -7,4 +7,5 @@ module.exports = {
   'global-footer': { src: 'src/components/global-footer/index.js', dist: 'components/global-footer/index' },
   'layout-basic': { src: 'src/components/layout-basic/index.js', dist: 'components/layout-basic/index' },
   'layout-simple': { src: 'src/components/layout-simple/index.js', dist: 'components/layout-simple/index' },
+  'editor-code': { src: 'src/components/editor-code/index.js', dist: 'components/editor-code/index' },
 };

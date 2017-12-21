@@ -1,10 +1,10 @@
 {
   "name": "t-design",
-  "version": "0.0.1",
+  "version": "0.4.0",
   "description": "t-design",
   "author": "TalkingData T-Design team",
   "files": [
-    "dist"
+    "components"
   ],
   "scripts": {
     "mock": "./node_modules/.bin/json-server mock/index.js",
@@ -17,6 +17,7 @@
     "es-lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
     "lint": "npm run es-lint && npm run css-lint",
     "build": "rm -rf components && node build/rollup.config.js && node build/build.js",
+    "prepublish": "npm run build",
     "docs": "./node_modules/docsify-cli/bin/docsify serve ./docs",
     "deploy": "rm -rf components && rm -rf dist && rm -rf site && mkdir -p ./site/preview && npm run build && cp -R ./dist/* ./site/preview/ && cp -R ./docs/* ./site/ && ./node_modules/.bin/gh-pages -d site"
   },
@@ -28,6 +29,7 @@
   },
   "dependencies": {
     "apischema": "0.0.28",
+    "codemirror": "^5.32.0",
     "iview": "^2.7.4",
     "normalize.css": "^7.0.0",
     "t-charts": "^1.2.6",

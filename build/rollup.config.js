@@ -47,9 +47,12 @@ pkgTypeList.forEach(({ type, min, suffix }) => {
 pkg.forEach(item => { rollupFn(item) })
 
 function rollupFn (item) {
+  let cssPath = `components/${item.globalName}/style.css`;
+  let cssMinPath = `components/${item.globalName}/style.min.css`;
+
   const vueSettings = item.min
-    ? { css: `components/${item.globalName}/style.min.css`, postcss: [autoprefixer, cssnano] }
-    : { css: `components/${item.globalName}/style.css`, postcss: [autoprefixer] }
+    ? { css: cssMinPath, postcss: [autoprefixer, cssnano] }
+    : { css: cssPath, postcss: [autoprefixer] }
 
   const plugins = [
     eslint({
@@ -110,7 +113,7 @@ function rollupFn (item) {
 
   rollup.rollup({
     input: item.src,
-    // external: id => /^iview/.test(id),
+    external: ['codemirror'],
     plugins
   }).then(function (bundle) {
     const dest = item.dist + item.suffix
@@ -119,9 +122,9 @@ function rollupFn (item) {
       format: item.type,
       // moduleName: item.globalName,
       name: item.globalName,
-      // globals: {
-      //   'iview/src/components/dropdown': 'Dropdown'
-      // },
+      globals: {
+        'codemirror': 'CodeMirror'
+      },
       file: dest
     })
   }).catch((e) => {

@@ -5,12 +5,19 @@ import logoMini from '../assets/logo-min.jpg';
 const menu = [
   {
     path: '/',
-    redirect: '/base/layout',
+    redirect: '/base/chart',
     icon: 'stats-bars',
     name: 'base',
     title: '基础组件',
     // component: Layout,
     children: [
+      {
+        path: 'base/chart',
+        title: '图表',
+        name: 'chart',
+        // eslint-disable-next-line
+        component: (resolve) => require(['../views/base/chart.vue'], resolve),
+      },
       {
         path: 'base/layout',
         title: '布局',
@@ -24,13 +31,6 @@ const menu = [
         name: 'container',
         // eslint-disable-next-line
         component: (resolve) => require(['../views/base/container.vue'], resolve),
-      },
-      {
-        path: 'base/chart',
-        title: '图表',
-        name: 'chart',
-        // eslint-disable-next-line
-        component: (resolve) => require(['../views/base/chart.vue'], resolve),
       },
     ],
   },
@@ -104,38 +104,25 @@ const menu = [
     ],
   },
   {
-    path: '/charts',
+    path: '/editor',
     icon: 'stats-bars',
-    name: 'charts',
-    title: '图表容器',
-    // component: Layout,
-    children: [{
-      path: 'chart1',
-      title: '图表1',
-      name: 'chart1',
-      // eslint-disable-next-line
-      component: (resolve) => require(['../views/charts/chart1.vue'], resolve),
-    }, {
-      path: 'chart2',
-      title: '图表2',
-      name: 'chart2',
-      // eslint-disable-next-line
-      component: (resolve) => require(['../views/charts/chart2.vue'], resolve),
-    }],
-  },
-  {
-    path: '/table',
-    icon: 'ios-grid-view',
-    name: 'table',
-    title: '表格容器',
+    name: 'editor',
+    title: '编辑器',
     // component: Layout,
     children: [
       {
-        path: 'table1',
-        title: '表格1',
-        name: 'table1',
+        path: 'editor-code',
+        title: 'Code 编辑器',
+        name: 'editor-code',
         // eslint-disable-next-line
-        component: (resolve) => require(['../views/table/table1.vue'], resolve),
+        component: (resolve) => require(['../views/editor/code.vue'], resolve),
+      },
+      {
+        path: 'editor-markdown',
+        title: 'Markdown 编辑器',
+        name: 'editor-markdown',
+        // eslint-disable-next-line
+        component: (resolve) => require(['../views/editor/markdown.vue'], resolve),
       },
     ],
   },

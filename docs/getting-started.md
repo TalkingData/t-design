@@ -65,3 +65,5 @@ $ npm run dev
 ```
 
 启动完成后访问 [http://localhost:8080/](http://localhost:8080/),看到下面的界面就代表成功了。
+
+![columns](./imgs/t-design.png)

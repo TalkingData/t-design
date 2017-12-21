@@ -4,34 +4,40 @@
 <template>
   <div class="hello">
     <div class="main-container">
-      <i-row class="item-row" :gutter="24">
-        <i-col span="6"
-               class="pr-8">
-          <cardcontaier border
-                        type="normal"
-                        title="日均下单量">
-            <histogram-mini :data="hiData"
-                            :settings="hiSettings"
-                            height="70px" >
-            </histogram-mini>
-          </cardcontaier>
-        </i-col>
-        <i-col span="6"
-               class="pr-8">
-          <cardcontaier border
-                        type="normal"
-                        title="日均下单量"
-                        content="32,625"
-                        subContent="-12.15%"
-                        status="error">
-            <line-mini :data="chartData"
-                       :settings="chartSettings"
-                       height="70px">
-            </line-mini>
-          </cardcontaier>
-        </i-col>
-        <i-col span="6" class="pr-8">
-          <cardcontaier
+      <ve-row class="item-row" :gutter="24">
+        <ve-col span="6" class="pr-8">
+          <ve-contaier-card
+            title="日均下单量"
+            content="32,625"
+            subContent="-12.15%"
+            status="error"
+            border
+            type="normal"
+          >
+          <ve-histogram-mini :data="hiData"
+                          :settings="hiSettings"
+                          height="70px" >
+          </ve-histogram-mini>
+          </ve-contaier-card>
+        </ve-col>
+        <ve-col span="6" class="pr-8">
+          <ve-contaier-card
+            title="日均下单量"
+            content="32,625"
+            subContent="-12.15%"
+            status="error"
+            :help="false"
+            border
+            type="normal"
+          >
+          <ve-line-mini :data="chartData"
+                     :settings="chartSettings"
+                     height="70px">
+          </ve-line-mini>
+          </ve-contaier-card>
+        </ve-col>
+        <ve-col span="6" class="pr-8">
+          <ve-contaier-card
             title="日均下单量"
             content="32,625,318"
             sub-content="-12.15%"
@@ -40,125 +46,125 @@
             type="center"
           >
             <!-- <span slot="header">日均下单量</span> -->
-          </cardcontaier>
-        </i-col>
-        <i-col span="6" class="pr-8">
-          <cardcontaier
+          </ve-contaier-card>
+        </ve-col>
+        <ve-col span="6" class="pr-8">
+          <ve-contaier-card
             content="32,625,318"
             size="20"
             sub-content="日均下单量"
             color="#80848F"
             border
             type="left"
-          ></cardcontaier>
-        </i-col>
-      </i-row>
-      <i-row class="item-row" :gutter="24">
-        <i-col span="12">
-          <outercontaier class="mt-16"
+          ></ve-contaier-card>
+        </ve-col>
+      </ve-row>
+      <ve-row class="item-row" :gutter="24">
+        <ve-col span="12">
+          <ve-contaier-outer class="mt-16"
                          title="30日趋势"
                          border
                          type="mix"
-          ><t-line  :data="lData"
+          ><ve-line  :data="lData"
                      :settings="lSettings"
 
                      :legend-visible="false"
                      height="294px">
-          </t-line>
-          </outercontaier>
-        </i-col>
-        <i-col span="12">
-          <outercontaier class="mt-16"
+          </ve-line>
+          </ve-contaier-outer>
+        </ve-col>
+        <ve-col span="12">
+          <ve-contaier-outer class="mt-16"
                          title="折线堆积面积图"
                          border
                          type="mix"
-          ><t-line :data="lineData"
+          ><ve-line :data="lineData"
                     :settings="lineSettings"
                     height="294px">
-          </t-line>
-          </outercontaier>
-        </i-col>
-      </i-row>
-      <i-row class="item-row" :gutter="24">
-        <i-col span="12">
-          <outercontaier class="mt-16"
+          </ve-line>
+          </ve-contaier-outer>
+        </ve-col>
+      </ve-row>
+      <ve-row class="item-row" :gutter="24">
+        <ve-col span="12">
+          <ve-contaier-outer class="mt-16"
                          title="柱状图"
                          border
                          type="mix"
-          ><t-histogram :data="histogramData"
+          ><ve-histogram :data="histogramData"
                          :settings="histogramSettings"
                          height="294px">
-          </t-histogram>
-          </outercontaier>
-        </i-col>
-        <i-col span="12">
-          <outercontaier class="mt-16"
+          </ve-histogram>
+          </ve-contaier-outer>
+        </ve-col>
+        <ve-col span="12">
+          <ve-contaier-outer class="mt-16"
                          title="柱状堆积图"
                          border
                          type="mix"
-          ><t-histogram :data="hData"
+          ><ve-histogram :data="hData"
                         :settings="hSettings"
                         height="294px">
-          </t-histogram>
-          </outercontaier>
-        </i-col>
-      </i-row>
-      <i-row class="item-row" :gutter="24">
-        <i-col span="12">
-          <outercontaier class="mt-16"
+          </ve-histogram>
+          </ve-contaier-outer>
+        </ve-col>
+      </ve-row>
+      <ve-row class="item-row" :gutter="24">
+        <ve-col span="12">
+          <ve-contaier-outer class="mt-16"
                          title="条形图"
                          border
                          type="mix"
-          ><t-bar :data="barData"
+          ><ve-bar :data="barData"
                   :settings="barSettings"
                   height="294px">
-          </t-bar>
-          </outercontaier>
-        </i-col>
-        <i-col span="12">
-          <outercontaier class="mt-16"
+          </ve-bar>
+          </ve-contaier-outer>
+        </ve-col>
+        <ve-col span="12">
+          <ve-contaier-outer class="mt-16"
                          title="雷达图"
                          border
                          type="mix"
-          ><t-radar :data="radarData"
+          ><ve-radar :data="radarData"
                      :settings="radarSettings"
                      height="294px">
-          </t-radar>
-          </outercontaier>
-        </i-col>
-      </i-row>
-      <i-row class="item-row" :gutter="24">
-        <i-col span="12">
-          <outercontaier class="mt-16"
+          </ve-radar>
+          </ve-contaier-outer>
+        </ve-col>
+      </ve-row>
+      <ve-row class="item-row" :gutter="24">
+        <ve-col span="12">
+          <ve-contaier-outer class="mt-16"
                          title="饼图"
                          border
                          type="mix"
-          ><t-pie :data="pieData"
+          ><ve-pie :data="pieData"
                   :settings="pieSettings"
                   height="294px"
                   :legend-position="piePosition">
-          </t-pie>
-          </outercontaier>
-        </i-col>
-        <i-col span="12">
-          <outercontaier class="mt-16"
+          </ve-pie>
+          </ve-contaier-outer>
+        </ve-col>
+        <ve-col span="12">
+          <ve-contaier-outer class="mt-16"
                          title="环形图"
                          border
                          type="mix"
-          ><t-ring :data="ringData"
+          ><ve-ring :data="ringData"
                     :settings="ringSettings"
                     height="294px"
                     :legend-position="piePosition">
-          </t-ring>
-          </outercontaier>
-        </i-col>
-      </i-row>
+          </ve-ring>
+          </ve-contaier-outer>
+        </ve-col>
+      </ve-row>
     </div>
   </div>
 </template>
 
 <script>
-  import { Row, Col, Table, Message } from 'iview';
+  import { Row, Col, Message } from 'iview';
   import tLine from 't-charts/lib/line';
   import tPie from 't-charts/lib/pie';
   import tHistogram from 't-charts/lib/histogram';
@@ -356,21 +362,20 @@
       };
     },
     components: {
-      iRow: Row,
-      iCol: Col,
-      iTable: Table,
-      tLine,
-      tRing,
-      tBar,
-      tRadar,
-      tHistogram,
-      tPie,
-      lineMini,
-      barMini,
-      histogramMini,
-      cardcontaier,
-      chartcontaier,
-      outercontaier,
+      've-row': Row,
+      've-col': Col,
+      've-line': tLine,
+      've-ring': tRing,
+      've-bar': tBar,
+      've-radar': tRadar,
+      've-histogram': tHistogram,
+      've-pie': tPie,
+      've-line-mini': lineMini,
+      've-bar-mini': barMini,
+      've-histogram-mini': histogramMini,
+      've-contaier-card': cardcontaier,
+      've-contaier-chart': chartcontaier,
+      've-contaier-outer': outercontaier,
     },
   };
 </script>

@@ -1,14 +1,14 @@
 <template>
   <div class="container">
 
-    <i-row class="chart-show-area">
-      <!-- <chartcontaier title="累计设备">
+    <ve-row class="chart-show-area">
+      <!-- <ve-contaier-chart title="累计设备">
         <div slot="chart">
           <div class="chart-item">
-            <tLine
+            <ve-line
               :data="lineData"
               :settings="lineSetting">
-            </tLine>
+            </ve-line>
           </div>
         </div>
         <div slot="table">
@@ -16,8 +16,8 @@
             <i-table :data="testData" :columns="tableColumn" border></i-table>
           </div>
         </div>
-      </chartcontaier> -->
-      <outercontaier
+      </ve-contaier-chart> -->
+      <ve-contaier-outer
         title="新增设备"
         border
         type="tab"
@@ -27,20 +27,20 @@
           <div>title="新增设备";
           border;
         type="tab"</div>
-        </outercontaier>
-      <outercontaier class="mt-16"
+        </ve-contaier-outer>
+      <ve-contaier-outer class="mt-16"
         title="新增设备"
         border
         type="mix"
         :tabs="tabs"
         :value="tabValue1"
         @on-click="getTabKey1">
-        <i-row>
+        <ve-row>
           title="新增设备";border;type="mix"
-        </i-row>
-        <i-row>
-          <i-col span="6" class="pr-8">
-            <cardcontaier
+        </ve-row>
+        <ve-row>
+          <ve-col span="6" class="pr-8">
+            <ve-contaier-card
             title="title"
             content="content"
             subContent="subContent"
@@ -48,11 +48,11 @@
             border
             type="normal"
             >
-            </cardcontaier>
+            </ve-contaier-card>
             <div class="mt-16">type:normal;含有title,content,sub-content</div>
-          </i-col>
-          <i-col span="6" class="pr-8">
-            <cardcontaier
+          </ve-col>
+          <ve-col span="6" class="pr-8">
+            <ve-contaier-card
             title="title"
             content="content"
             subContent="subContent"
@@ -61,11 +61,11 @@
             border
             type="normal"
             >
-            </cardcontaier>
+            </ve-contaier-card>
             <div class="mt-16">type:normal;含有title,content,sub-content;不含help</div>
-          </i-col>
-          <i-col span="6" class="pr-8">
-            <cardcontaier
+          </ve-col>
+          <ve-col span="6" class="pr-8">
+            <ve-contaier-card
             title="日均下单量"
             content="32,625,318"
             sub-content="-12.15%"
@@ -74,53 +74,52 @@
             type="center"
             >
               <!-- <span slot="header">日均下单量</span> -->
-            </cardcontaier>
+            </ve-contaier-card>
             <div class="mt-16">type:center;content,sub-content;无title</div>
-          </i-col>
-          <i-col span="6" class="pr-8">
-            <cardcontaier
+          </ve-col>
+          <ve-col span="6" class="pr-8">
+            <ve-contaier-card
             content="32,625,318"
             size="20"
             sub-content="日均下单量"
             color="#80848F"
             border
             type="left"
-            ></cardcontaier>
+            ></ve-contaier-card>
             <div class="mt-16">type:left;content,sub-content;无title</div>
-          </i-col>
-        </i-row>
-      </outercontaier>
-    </i-row>
-    <i-row>
-      <outercontaier class="mt-16"
+          </ve-col>
+        </ve-row>
+      </ve-contaier-outer>
+    </ve-row>
+    <ve-row>
+      <ve-contaier-outer class="mt-16"
         title="新增设备"
         border
         type="normal"
         @on-todo="download"
         >title="新增设备";border;type="normal"
-        </outercontaier>
-    </i-row>
+        </ve-contaier-outer>
+    </ve-row>
   </div>
 </template>
 
 <script>
-import { Row, Col, Table, Message } from 'iview';
+import { Row, Col, Message } from 'iview';
 import tLine from 't-charts/lib/line';
-import cardcontaier from './card-container';
-import chartcontaier from './chart-container';
-import outercontaier from './outer-container';
+import contaierCard from './card-container';
+import contaierChart from './chart-container';
+import contaierOuter from './outer-container';
 import lineChartData from '../../libs/line';
 
 export default {
   name: 'container',
   components: {
-    iRow: Row,
-    iCol: Col,
-    iTable: Table,
-    tLine,
-    cardcontaier,
-    chartcontaier,
-    outercontaier,
+    've-row': Row,
+    've-col': Col,
+    've-line': tLine,
+    've-contaier-card': contaierCard,
+    've-contaier-chart': contaierChart,
+    've-contaier-outer': contaierOuter,
   },
   data() {
     return {

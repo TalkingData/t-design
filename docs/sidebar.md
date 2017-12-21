@@ -4,6 +4,7 @@
  - [路由和菜单](/router-and-nav)
  - [新增页面](/new-page)
  - [新增业务组件](/new-component)
+ - [规范化](/normalize)
  - [样式](/style)
  - [和服务端进行交互](/server)
  - [构建和发布](/deploy)
@@ -13,6 +14,8 @@
  - [UI test](/ui-test)
  - [独立使用 T-Design 组件](/use-components-alone)
  - [使用 API 文档工具](/api-doc)
+- 组件库
+ - [代码编辑器](/components/editor-code)
 - 其它
  - [更新日志](/changelog)
  - [常见问题](/faq)

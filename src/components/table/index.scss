@@ -1,0 +1,45 @@
+.list-item{
+  margin: 20px 0;
+}
+.table-before{
+  display: flex;
+  justify-content: space-between;
+  height: 56px;
+  margin: 0 12px;
+}
+.table-title{
+  font-size: 14px;
+  line-height: 56px;
+  color: #1c2438;
+}
+.table-tool{
+  height: 32px;
+  margin-top: 12px;
+  line-height: 32px;
+
+  .setting-circle{
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    text-align: center;
+    border: 1px solid #dddee1;
+    border-radius: 50%;
+  }
+  .table-tool-item{
+    margin-left: 12px;
+    vertical-align: middle;
+
+    i{
+      color: rgba(28, 36, 56, .56);
+      vertical-align: middle;
+    }
+  }
+}
+.search-box.ivu-input-wrapper{
+  width: 160px;
+  height: 32px;
+
+  .ivu-input{
+    border-radius: 20px;
+  }
+}
