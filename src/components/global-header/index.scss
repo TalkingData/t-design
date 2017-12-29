@@ -1,8 +1,77 @@
 @import "../../styles/index.scss";
 
+.clearfix {
+  @include clearfix;
+}
+.float-left {
+  @include float-left;
+}
+.float-right {
+  @include float-right;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
 .t-design-g-header {
-  position: absolute;
-  bottom: 5px;
-  width: 100%;
-  text-align: center;
+  position: relative;
+  z-index: 11;
+  height: 60px;
+  font-family: PingFangSC-Regular, "Microsoft Yahei";
+  background: #fff;
+  box-shadow: 0 2px 1px 1px rgba(100, 100, 100, .1);
+  .navicon-con {
+    display: inline-block;
+    margin: 6px;
+  }
+  .header-avator-con {
+    position: absolute;
+    top: 0;
+    right: 0;
+    @include size(auto, 100%);
+    .message-con {
+      display: inline-block;
+      width: 40px;
+      padding: 18px 0;
+      margin-right: 8px;
+      text-align: center;
+      cursor: pointer;
+      i {
+        vertical-align: middle;
+      }
+    }
+    .user-dropdown {
+      &-menu-con {
+        display: inline-block;
+        padding: 18px 0;
+        .main-user-name {
+          display: inline-block;
+          overflow: hidden;
+          text-align: right;
+          text-overflow: ellipsis;
+          word-break: keep-all;
+          white-space: nowrap;
+          vertical-align: middle;
+        }
+      }
+      &-innercon {
+        height: 100%;
+        padding-right: 16px;
+      }
+    }
+    .change-language {
+      display: inline-block;
+      margin-right: 16px;
+      .language-kind {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        font-style: normal;
+        line-height: 24px;
+        color: #80848f;
+        text-align: center;
+        border: 1px solid #80848f;
+        border-radius: 50%;
+      }
+    }
+  }
 }

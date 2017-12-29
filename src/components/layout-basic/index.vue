@@ -44,7 +44,7 @@ import { Button, Icon } from 'iview';
 import globalMenu from '../global-menu/global-menu';
 import tfooter from '../global-footer';
 import core from '../../mixins/core';
-import theader from '../../views/base/header';
+import theader from '../global-header';
 
 export default {
   mixins: [core],
