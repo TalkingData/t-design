@@ -48,6 +48,26 @@
         </slot>
       </div>
     </div>
+    <div class="card-loading" v-if="loading">
+      <p class="card-loading-block" style="width: 94%;"></p>
+      <p>
+        <span class="card-loading-block" style="width: 28%;"></span>
+        <span class="card-loading-block" style="width: 62%;"></span>
+      </p>
+      <p>
+        <span class="card-loading-block" style="width: 22%;"></span>
+        <span class="card-loading-block" style="width: 66%;"></span>
+      </p>
+      <p>
+        <span class="card-loading-block" style="width: 56%;"></span>
+        <span class="card-loading-block" style="width: 29%;"></span>
+      </p>
+      <p>
+        <span class="card-loading-block" style="width: 21%;"></span>
+        <span class="card-loading-block" style="width: 15%;"></span>
+        <span class="card-loading-block" style="width: 40%;"></span>
+      </p>
+    </div>
     <slot></slot>
   </section>
 </template>
@@ -108,6 +128,10 @@
       type: {
         type: String,
         default: 'normal',
+      },
+      loading: {
+        type: Boolean,
+        default: false,
       },
     },
     data() {

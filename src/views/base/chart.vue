@@ -12,6 +12,7 @@
             subContent="-12.15%"
             status="error"
             border
+            loading
             type="normal"
           >
           <ve-histogram-mini :data="hiData"
@@ -55,6 +56,7 @@
             sub-content="日均下单量"
             color="#80848F"
             border
+            loading
             type="left"
           ></ve-contaier-card>
         </ve-col>
